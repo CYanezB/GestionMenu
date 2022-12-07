@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: 'menu/new', component: MenuFormComponent },
   { path: 'plato/new', component: PlatosFormComponent },
   { path: '**', redirectTo: '' }
-
 ];
 
 @NgModule({

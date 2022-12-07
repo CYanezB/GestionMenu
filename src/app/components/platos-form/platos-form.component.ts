@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-platos-form',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlatosFormComponent implements OnInit {
 
-  constructor() { }
+  formulario: FormGroup;
+
+
+  constructor() {
+    this.formulario = new FormGroup({
+
+    })
+  }
 
   ngOnInit(): void {
   }
 
+
+  onSubmit() {
+
+    console.log(this.formulario.value)
+
+  }
 }

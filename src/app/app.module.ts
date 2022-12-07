@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PlatosFormComponent } from './components/platos-form/platos-form.component';
 import { MenuFormComponent } from './components/menu-form/menu-form.component';
 import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LoginComponent } from './components/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

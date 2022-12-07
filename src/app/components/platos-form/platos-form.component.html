@@ -1,1 +1,35 @@
-<p>platos-form works!</p>
+<div class="container">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label class="tituloInput">Nombre:</label>
+            <input type="text" name="nombre">
+        </div>
+        <div>
+            <label class="tituloInput">Ingredientes:</label>
+            <input type="text" name="ingredientes">
+            <button value="add" class="myButton2">Añadir</button>
+        </div>
+        <div>
+            <h3 class="tituloInput">Alérgenos:</h3>
+            <label>Frutos secos</label>
+            <input type="checkbox" name="frutos_secos">
+            <label>Mariscos</label>
+            <input type="checkbox" name="mariscos">
+            <label>Lácteos</label>
+            <input type="checkbox" name="lácteos">
+            <label>Huevos</label>
+            <input type="checkbox" name="huevos">
+        </div>
+        <div>
+            <label class="tituloInput">Categoría</label>
+            <select name="categoria" id="cat">
+                <option value="" hidden>Seleccciona la categoría</option>
+                <option value="primero">Primero</option>
+                <option value="segundo">Segundo</option>
+                <option value="postre">Postre</option>
+            </select>
+
+        </div>
+        <input type="submit" value="Enviar" class="myButton">
+    </form>
+</div>
