@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,17 @@ import { Injectable } from '@angular/core';
 })
 export class PlatosService {
 
-  constructor() { }
+  baseUrl: string;
+
+  constructor(
+    private HttpClient: HttpClient
+  ) {
+    this.baseUrl = 'http://localhost:3000/'
+  }
+
+
+
+
+
+
 }

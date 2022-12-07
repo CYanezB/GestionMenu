@@ -1,35 +1,53 @@
-<div class="container">
+<div class="contenedor">
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label class="tituloInput">Nombre:</label>
-            <input type="text" name="nombre">
+            <input type="text" formControlName="nombre">
+            <p class="error" *ngIf="checkError('nombre', 'required')">El campo nombre es requerido</p>
         </div>
         <div>
             <label class="tituloInput">Ingredientes:</label>
-            <input type="text" name="ingredientes">
-            <button value="add" class="myButton2">Añadir</button>
+            <input type="text" #inputIngredientes placeholder="Añade los ingredientes">
+
+            <button type="button" class="btn btn-outline-info" (click)="nuevoIngrediente($event)">Añadir</button>
+            <p class="error" *ngIf="botonIngredientes !== ''">{{botonIngredientes}}</p>
+
+
         </div>
-        <div>
-            <h3 class="tituloInput">Alérgenos:</h3>
-            <label>Frutos secos</label>
-            <input type="checkbox" name="frutos_secos">
+        <div class="ingredientes">
+            <p *ngFor="let ingrediente of ingredientes; let indice = index">{{ingrediente}}</p>
+        </div>
+        <label class="tituloInput">Alérgenos:</label>
+        <div class="alergenos">
+
+            <div *ngFor="let alergeno of alergenos; let indice = index">
+                <label>{{alergeno}}</label>
+                <input type="checkbox" (change)="seleccionAlergenos($event)" [value]="alergeno">
+            </div>
+
+
+            <!-- <label>Frutos secos</label>
+            <input type="checkbox" formControlName="alergenos" value="frutos_secos">
             <label>Mariscos</label>
-            <input type="checkbox" name="mariscos">
+            <input type="checkbox" formControlName="alergenos" value="mariscos">
             <label>Lácteos</label>
-            <input type="checkbox" name="lácteos">
+            <input type="checkbox" formControlName="alergenos" value="lacteos">
             <label>Huevos</label>
-            <input type="checkbox" name="huevos">
+            <input type="checkbox" formControlName="alergenos" value="huevos"> -->
         </div>
         <div>
             <label class="tituloInput">Categoría</label>
-            <select name="categoria" id="cat">
+            <select formControlName="categoria" id="cat">
                 <option value="" hidden>Seleccciona la categoría</option>
                 <option value="primero">Primero</option>
                 <option value="segundo">Segundo</option>
                 <option value="postre">Postre</option>
             </select>
+            <p class="error" *ngIf="checkError('categoria', 'required')">El campo categoría es requerido</p>
 
         </div>
-        <input type="submit" value="Enviar" class="myButton">
+        <input type="submit" value="Enviar" [disabled]="!formulario.valid" [ngClass]="{
+            'disabled': !formulario.valid
+        }">
     </form>
 </div>

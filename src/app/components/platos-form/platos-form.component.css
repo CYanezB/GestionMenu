@@ -1,24 +1,68 @@
 @import "../../../styles.css";
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
-.container {
+.contenedor {
     display: flex;
-    background-color: gray;
+    background-color: var(--azuloscuro);
     text-align: center;
+    width: 100%;
 }
 
 form {
-    border: 2px solid black;
+    border: 2px solid var(--azulclaro);
     margin: 3em auto;
-    background-color: var(--colorprincipal);
+    background-color: var(--amarillo);
     padding: 2em;
+    width: 600px;
+    border-radius: 15px;
+    font-family: montserrat;
 }
 
 form input {
-    margin: 1em;
+    margin: 1.5em;
 }
 
 .tituloInput {
     font-weight: bold;
     text-decoration: underline;
     margin-right: 10px;
+}
+
+.alergenos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+    margin: 1em auto;
+}
+
+.alergenos div label {
+    width: 6em;
+}
+
+
+input.ng-invalid.ng-touched {
+    border: 2px solid lightcoral;
+}
+
+.error {
+    font-size: smaller;
+    color: var(--azuloscuro);
+    margin: 1em;
+    color: tomato;
+}
+
+.ingredientes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.ingredientes p {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 0.5em;
 }

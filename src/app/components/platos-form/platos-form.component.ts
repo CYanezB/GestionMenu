@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Plato } from 'src/app/interfaces/plato.interface';
+import { PlatosService } from 'src/app/services/platos.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-platos-form',
@@ -8,13 +12,30 @@ import { FormGroup } from '@angular/forms';
 })
 export class PlatosFormComponent implements OnInit {
 
+
   formulario: FormGroup;
+  @ViewChild('inputIngredientes') inputIngredientes!: ElementRef;
 
+  ingredientes: string[];
+  alergenos: string[];
+  alergenosSeleccionados: string[];
+  botonIngredientes: string;
 
-  constructor() {
+  constructor(
+    private PlatosService: PlatosService
+  ) {
+    this.alergenos = ['Huevos', 'Frutos secos', 'Crustáceos', 'Lácteos', 'Gluten', 'Pescado', 'Cacahuetes', 'Soja', 'Apio', 'Mostaza', 'Sésamo', 'Sulfitos', 'Altramuces', 'Moluscos']
     this.formulario = new FormGroup({
-
+      nombre: new FormControl('', [
+        Validators.required
+      ]),
+      categoria: new FormControl('', [
+        Validators.required
+      ])
     })
+    this.ingredientes = []
+    this.alergenosSeleccionados = []
+    this.botonIngredientes = '';
   }
 
   ngOnInit(): void {
@@ -22,8 +43,49 @@ export class PlatosFormComponent implements OnInit {
 
 
   onSubmit() {
+    this.formulario.value.ingredientes = this.ingredientes;
+    this.formulario.value.alergenos = this.alergenosSeleccionados;
+    console.log(this.formulario.value);
+    Swal.fire(
+      'Hecho',
+      'Has añadido el plato correctamente',
+      'success'
+    )
+  };
 
-    console.log(this.formulario.value)
 
-  }
+  nuevoIngrediente($event: any) {
+    $event.preventDefault()
+    if (this.inputIngredientes.nativeElement.value !== '') {
+      if (!this.ingredientes.includes(this.inputIngredientes.nativeElement.value)) {
+        this.botonIngredientes = ''
+        this.ingredientes.push(this.inputIngredientes.nativeElement.value)
+      } else {
+        this.botonIngredientes = 'Ya has introducido este ingrediente'
+      }
+    } else {
+      this.botonIngredientes = 'Debes introducir algún ingrediente'
+    }
+
+
+  };
+
+  seleccionAlergenos($event: any) {
+    const value = $event.target.value;
+    if (this.alergenosSeleccionados.includes(value)) {
+      this.alergenosSeleccionados = this.alergenosSeleccionados.filter((item) => item != value)
+    } else {
+      this.alergenosSeleccionados.push(value)
+    }
+  };
+
+  checkError(field: string, error: string): boolean | undefined {
+    return this.formulario.get(field)?.hasError(error) && this.formulario.get(field)?.touched
+  };
+
+
+
+
+
+
 }
