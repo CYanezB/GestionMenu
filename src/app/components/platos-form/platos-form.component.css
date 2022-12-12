@@ -66,3 +66,30 @@ input.ng-invalid.ng-touched {
     border-radius: 15px;
     padding: 0.5em;
 }
+
+.aviso {
+    color: gray;
+    font-size: 0.7em;
+}
+
+.botonIngrediente {
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+.botonIngrediente:hover {
+    color: var(--amarillo);
+    background-color: black;
+}
+
+.botonIngrediente i {
+    opacity: 0;
+    font-size: 0em;
+    transition: 0.5s;
+}
+
+.botonIngrediente:hover i {
+    opacity: 1;
+    font-size: 1em;
+}

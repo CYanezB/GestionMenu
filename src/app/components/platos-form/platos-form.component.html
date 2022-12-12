@@ -15,25 +15,15 @@
 
         </div>
         <div class="ingredientes">
-            <p *ngFor="let ingrediente of ingredientes; let indice = index">{{ingrediente}}</p>
+            <p class='botonIngrediente' (click)='borrarIngrediente($event)' *ngFor="let ingrediente of ingredientes; let indice = index" [id]="indice">{{ingrediente}} <i class="fas fa-times-circle"></i></p>
         </div>
         <label class="tituloInput">Alérgenos:</label>
         <div class="alergenos">
 
             <div *ngFor="let alergeno of alergenos; let indice = index">
                 <label>{{alergeno}}</label>
-                <input type="checkbox" (change)="seleccionAlergenos($event)" [value]="alergeno">
+                <input type="checkbox" (change)="seleccionAlergenos($event)" [value]="indice + 1">
             </div>
-
-
-            <!-- <label>Frutos secos</label>
-            <input type="checkbox" formControlName="alergenos" value="frutos_secos">
-            <label>Mariscos</label>
-            <input type="checkbox" formControlName="alergenos" value="mariscos">
-            <label>Lácteos</label>
-            <input type="checkbox" formControlName="alergenos" value="lacteos">
-            <label>Huevos</label>
-            <input type="checkbox" formControlName="alergenos" value="huevos"> -->
         </div>
         <div>
             <label class="tituloInput">Categoría</label>
@@ -46,8 +36,8 @@
             <p class="error" *ngIf="checkError('categoria', 'required')">El campo categoría es requerido</p>
 
         </div>
-        <input type="submit" value="Enviar" [disabled]="!formulario.valid" [ngClass]="{
-            'disabled': !formulario.valid
+        <input type="submit" value="Enviar" [disabled]="!formulario.valid || ingredientes.length === 0" [ngClass]="{
+            'disabled': !formulario.valid 
         }">
     </form>
 </div>

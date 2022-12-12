@@ -1,8 +1,27 @@
 <div class="container">
-    <form>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <h2>MENU</h2>
         <div>
-            <label></label>
-            <input type="text">
+            <label>Primero: </label>
+            <select formControlName="primero">
+                <option value="" [hidden]="true">Selecciona un primero</option>
+                <option *ngFor="let plato of primeros" [value]="plato">{{plato}}</option>
+            </select>
         </div>
+        <div>
+            <label>Segundo: </label>
+            <select formControlName="segundo">
+                <option value="" [hidden]="true">Selecciona un segundo</option>
+                <option *ngFor="let plato of segundos" [value]="plato">{{plato}}</option>
+            </select>
+        </div>
+        <div>
+            <label>Postre: </label>
+            <select formControlName="postre">
+                <option value="" [hidden]="true">Selecciona un postre</option>
+                <option *ngFor="let plato of postres" [value]="plato">{{plato}}</option>
+            </select>
+        </div>
+        <input type="submit">
     </form>
 </div>

@@ -1,0 +1,21 @@
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--amarillo);
+    padding: 3em;
+    width: 600px;
+    margin: 2em auto;
+    gap: 2em;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid black
+}
+
+form label {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+form select {
+    margin-left: 1em;
+}
