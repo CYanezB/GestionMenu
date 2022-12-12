@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    height: 3em;
+    padding-top: 0.7em;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    color: white;
+    gap: 6em;
+}
+
+.activo {
+    background-color: white;
+    color: black;
+}

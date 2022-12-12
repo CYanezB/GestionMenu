@@ -1,7 +1,6 @@
 
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Plato } from 'src/app/interfaces/plato.interface';
 import { PlatosService } from 'src/app/services/platos.service';
 import Swal from 'sweetalert2'
 
@@ -66,8 +65,6 @@ export class PlatosFormComponent implements OnInit {
     } else {
       this.botonIngredientes = 'Debes introducir algún ingrediente'
     }
-
-
   };
 
   seleccionAlergenos($event: any) {

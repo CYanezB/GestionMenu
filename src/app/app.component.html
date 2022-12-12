@@ -1,1 +1,15 @@
+<header>
+    <nav>
+        <ul>
+            <li [routerLink]="" [routerLinkActive]="['activo']">Inicio</li>
+            <li [routerLink]="['/plato/new']" [routerLinkActive]="['activo']">Nuevo Plato</li>
+            <li [routerLink]="['/menu/new']" [routerLinkActive]="['activo']">Nuevo Menú</li>
+            <li>Usuarios</li>
+            <li [routerLink]="['']" [routerLinkActive]="['activo']">Login</li>
+            <li>Log Out</li>
+        </ul>
+    </nav>
+</header>
+
+
 <router-outlet></router-outlet>
