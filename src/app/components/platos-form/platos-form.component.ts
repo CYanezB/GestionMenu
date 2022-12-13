@@ -20,6 +20,7 @@ export class PlatosFormComponent implements OnInit {
   alergenos: string[];
   alergenosSeleccionados: number[];
   botonIngredientes: string;
+  platos: any;
 
   constructor(
     private PlatosService: PlatosService,

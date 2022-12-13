@@ -3,7 +3,6 @@
 
 .contenedor {
     display: flex;
-    background-color: var(--azuloscuro);
     text-align: center;
     width: 100%;
 }
@@ -92,4 +91,27 @@ input.ng-invalid.ng-touched {
 .botonIngrediente:hover i {
     opacity: 1;
     font-size: 1em;
+}
+
+.platos {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin: 5em;
+    justify-content: center;
+}
+
+.plato {
+    width: calc(25% - 1em);
+    background-color: var(--amarillo);
+    padding: 1em;
+    border: 1px solid var(--azulclaro);
+    border-radius: 15px;
+}
+
+p.alergenos {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }

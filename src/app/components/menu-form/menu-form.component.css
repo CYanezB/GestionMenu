@@ -1,4 +1,10 @@
-form {
+.contenedor {
+
+    width: 100%;
+}
+
+
+form.formMenu {
     display: flex;
     flex-direction: column;
     background-color: var(--amarillo);
@@ -18,4 +24,42 @@ form label {
 
 form select {
     margin-left: 1em;
+}
+
+.inputFecha {
+    margin-left: 1em;
+}
+
+.tarjetero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.tarjetaMenu {
+    border: 1px solid grey;
+    background-color: var(--naranja);
+    border-radius: 15px;
+    padding: 1em;
+    text-align: center;
+}
+
+.asignacion {
+    font-weight: bold;
+}
+
+.formCurso {
+    text-align: center;
+}
+
+.botonBorrar {
+    height: 2em;
+    width: 80px;
+    margin-left: 1em;
+    border-radius: 15px;
+}
+
+.botones {
+    margin: 1em;
 }

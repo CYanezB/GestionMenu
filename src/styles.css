@@ -15,3 +15,7 @@
     --naranja: #F2AE72;
     --fontppal: 'montserrat';
 }
+
+body {
+    background-color: var(--azuloscuro);
+}

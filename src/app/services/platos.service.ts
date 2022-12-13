@@ -29,6 +29,12 @@ export class PlatosService {
     );
   }
 
+  getById(id: number) {
+    return firstValueFrom(
+      this.HttpClient.get<any>(`${this.baseUrl}/platos/${id}`)
+    );
+  }
+
 
 
 }
