@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { RegistroService } from './services/registro.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'GestionMenu';
+  constructor(
+    private router: Router,
+    public registroService: RegistroService
+  ) { }
+
+  onLogOut() {
+    localStorage.removeItem('token')
+    this.router.navigate(['/login'])
+  }
 }

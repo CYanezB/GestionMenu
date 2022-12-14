@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { RegistroComponent } from './components/registro/registro.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { BrowserModule } from '@angular/platform-browser';
     PlatosFormComponent,
     MenuFormComponent,
     LoginComponent,
-    CalendarioComponent
+    CalendarioComponent,
+    RegistroComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

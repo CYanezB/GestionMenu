@@ -115,3 +115,21 @@ p.alergenos {
     flex-direction: column;
     text-align: center;
 }
+
+.hidden {
+    display: none;
+}
+
+.platos h3 {
+    width: 100%;
+    color: white;
+}
+
+.nombre {
+    font-weight: bolder;
+}
+
+.nombreIngrediente {
+    font-size: 0.7em;
+    font-style: oblique;
+}

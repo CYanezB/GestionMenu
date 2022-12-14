@@ -94,8 +94,8 @@ export class MenuFormComponent implements OnInit {
     }
 
 
-    // const menuAsignado = await this.menuService.asignarMenu(asignarMenu)
-    // console.log(menuAsignado);
+    const menuAsignado = await this.menuService.asignarMenu(asignarMenu)
+    console.log(menuAsignado);
 
     const curso = await this.menuService.getCicloById(asignarMenu.ciclos_id)
     Swal.fire(

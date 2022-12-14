@@ -41,10 +41,21 @@
         }">
     </form>
 </div>
+
 <div class="platos">
-    <div class="plato">
-        <p class="nombre">PUXERO</p>
-        <p class="ingredientes">INGREDIENTES TAL Y CUAL</p>
-        <p class="alergenos">Gluten noseke</p>
+    <h3>PRIMEROS</h3>
+    <div class="plato" *ngFor="let p of plato" [ngClass]="{'hidden' : p.categoria !== 'primero'}">
+        <p class="nombre">{{p.nombre.toUpperCase()}}</p>
+        <p *ngFor="let ingrediente of p.ingredientes" class="nombreIngrediente">{{ingrediente.nombre}}</p>
+    </div>
+    <h3>SEGUNDOS</h3>
+    <div class="plato" *ngFor="let p of plato" [ngClass]="{'hidden' : p.categoria !== 'segundo'}">
+        <p class="nombre">{{p.nombre.toUpperCase()}}</p>
+        <p *ngFor="let ingrediente of p.ingredientes" class="nombreIngrediente">{{ingrediente.nombre}}</p>
+    </div>
+    <h3>POSTRES</h3>
+    <div class="plato" *ngFor="let p of plato" [ngClass]="{'hidden' : p.categoria !== 'postre'}">
+        <p class="nombre">{{p.nombre.toUpperCase()}}</p>
+        <p *ngFor="let ingrediente of p.ingredientes" class="nombreIngrediente">{{ingrediente.nombre}}</p>
     </div>
 </div>

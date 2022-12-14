@@ -1,13 +1,13 @@
 <header>
     <nav>
         <ul>
-            <li [routerLink]="" [routerLinkActive]="['activo']" [routerLinkActiveOptions]="{exact: true}">Inicio</li>
-            <li [routerLink]="['/plato/new']" [routerLinkActive]="['activo']" [routerLinkActiveOptions]="{exact: true}">Nuevo Plato</li>
-            <li [routerLink]="['/menu/new']" [routerLinkActive]="['activo']" [routerLinkActiveOptions]="{exact: true}">Nuevo Menú</li>
-            <li [routerLink]="['/calendario']" [routerLinkActive]="['activo']" [routerLinkActiveOptions]="{exact: true}">Calendario</li>
-            <li>Usuarios</li>
-            <li [routerLink]="['']" [routerLinkActive]="['activo']" [routerLinkActiveOptions]="{exact: true}">Login</li>
-            <li>Log Out</li>
+            <li [routerLink]="" [routerLinkActive]="['activo']" *ngIf="registroService.isLogged()" [routerLinkActiveOptions]="{exact: true}">Inicio</li>
+            <li [routerLink]="['/plato/new']" [routerLinkActive]="['activo']" *ngIf="registroService.isLogged()" [routerLinkActiveOptions]="{exact: true}">Nuevo Plato</li>
+            <li [routerLink]="['/menu/new']" [routerLinkActive]="['activo']" *ngIf="registroService.isLogged()" [routerLinkActiveOptions]="{exact: true}">Nuevo Menú</li>
+            <li *ngIf="registroService.isLogged()">Usuarios</li>
+            <li [routerLink]="['/login']" [routerLinkActive]="['activo']" [routerLinkActiveOptions]="{exact: true}">Login</li>
+            <li [routerLink]="['/registro']" [routerLinkActive]="['activo']" [routerLinkActiveOptions]="{exact: true}">Registro</li>
+            <li *ngIf="registroService.isLogged()">Log Out</li>
 
         </ul>
     </nav>

@@ -2,6 +2,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Plato } from 'src/app/interfaces/plato.interface';
+import { MenuService } from 'src/app/services/menu.service';
 import { PlatosService } from 'src/app/services/platos.service';
 import Swal from 'sweetalert2'
 
@@ -20,10 +22,14 @@ export class PlatosFormComponent implements OnInit {
   alergenos: string[];
   alergenosSeleccionados: number[];
   botonIngredientes: string;
-  platos: any;
+  allPlatos: any;
+  allMenuses: any;
+  menu: any;
+  plato: any;
 
   constructor(
     private PlatosService: PlatosService,
+    private MenuService: MenuService,
     private router: Router
   ) {
     this.alergenos = ['Gluten', 'Crustáceos', 'Huevos', 'Pescado', 'Cacahuetes', 'Soja', 'Lácteos', 'Frutos con cáscara', 'Apio', 'Mostaza', 'Sésamo', 'Sulfitos', 'Altramuces', 'Moluscos']
@@ -38,9 +44,47 @@ export class PlatosFormComponent implements OnInit {
     this.ingredientes = []
     this.alergenosSeleccionados = []
     this.botonIngredientes = '';
+    this.menu = []
+    this.plato = []
   }
 
   ngOnInit(): void {
+    this.getAll()
+  }
+
+  async getAll() {
+    try {
+      this.allPlatos = await this.PlatosService.getAll()
+      for (let p of this.allPlatos) {
+        const response = await this.PlatosService.getById(p.id)
+        this.plato.push(response)
+      }
+      console.log(this.plato);
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async getAllMenuses() {
+    try {
+      this.allMenuses = await this.MenuService.getAllMenuses()
+
+      for (let m of this.allMenuses) {
+
+        let p = await this.PlatosService.getById(m.primero)
+        let s = await this.PlatosService.getById(m.segundo)
+        let pos = await this.PlatosService.getById(m.postre)
+        let result = {
+          primero: p,
+          segundo: s,
+          postre: pos
+        }
+        this.menu.push(result)
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 
@@ -56,7 +100,6 @@ export class PlatosFormComponent implements OnInit {
       }
       const response = await this.PlatosService.nuevoPlato(pValues);
       console.log(response);
-
 
 
       Swal.fire(

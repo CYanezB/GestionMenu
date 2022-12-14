@@ -1,12 +1,20 @@
 <div class="contenedor">
     <form class="formularioRegistro" [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div class="inputsFormulario">
+            <label>Nombre:</label>
+            <input type="text" formControlName="nombre">
+        </div>
+        <div class="inputsFormulario">
             <label>Email:</label>
             <input type="text" formControlName="email">
         </div>
         <div class="inputsFormulario">
             <label>Contraseña:</label>
             <input type="password" formControlName="password">
+        </div>
+        <div class="inputsFormulario">
+            <label>Repite la contraseña:</label>
+            <input type="password" formControlName="repitePassword">
         </div>
         <input type="submit" value="Enviar" [disabled]="!formulario.valid" [ngClass]="{
             'disabled': !formulario.valid 

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { firstValueFrom } from 'rxjs';
+import { first, firstValueFrom } from 'rxjs';
 import { Plato } from '../interfaces/plato.interface';
 
 @Injectable({
@@ -35,6 +35,11 @@ export class PlatosService {
     );
   }
 
+  getAll() {
+    return firstValueFrom(
+      this.HttpClient.get<any>(`${this.baseUrl}/platos`)
+    )
+  }
 
 
 }
