@@ -1,65 +1,89 @@
+.body {
+  width: 100%;
+  display: flex;
+}
+
 .contenedor {
-
-    width: 100%;
-}
-
-
-form.formMenu {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--amarillo);
-    padding: 3em;
-    width: 600px;
-    margin: 2em auto;
-    gap: 2em;
-    text-align: center;
-    border-radius: 15px;
-    border: 2px solid black
-}
-
-form label {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-form select {
-    margin-left: 1em;
-}
-
-.inputFecha {
-    margin-left: 1em;
+  width: 50%;
+  padding: 10px;
 }
 
 .tarjetero {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    justify-content: center;
+  margin-right: 20px;
+  margin-top: 50px;
+  justify-content: left;
+}
+
+form.formMenu {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  padding: 3em;
+  width: 600px;
+  margin: 2em auto;
+  gap: 2em;
+  text-align: left;
+  border-radius: 20px;
+  border: 2px solid var(--green-light);
+}
+
+form label {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+form select {
+  margin-left: 1em;
+}
+
+.inputFecha {
+  margin-left: 1em;
+}
+
+.tarjetero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
 }
 
 .tarjetaMenu {
-    border: 1px solid grey;
-    background-color: var(--naranja);
-    border-radius: 15px;
-    padding: 1em;
-    text-align: center;
+  background-color: var(--green-light);
+  border-radius: 15px;
+  padding: 1em;
+  text-align: left;
 }
-
-.asignacion {
-    font-weight: bold;
-}
-
+/* 
 .formCurso {
-    text-align: center;
-}
+  text-align: center;
+} */
 
 .botonBorrar {
-    height: 2em;
-    width: 80px;
-    margin-left: 1em;
-    border-radius: 15px;
+  height: 2em;
+  width: 80px;
+  margin-left: 1em;
+  border-radius: 15px;
 }
 
 .botones {
-    margin: 1em;
+  margin: 1em;
 }
+
+.formMenu label {
+  font-weight: 300;
+  text-decoration: none;
+}
+
+/* 
+  --green-light: #7bc0b3;
+    --green-medium: #2d856f;
+    --green-dark: #0a543b;
+
+    --rose-light: #f8d5cf;
+    --rose-medium: #ea9f82;
+    --rose-dark: #ea424e;
+
+    --yellow-light: #ffda9f;
+    --yellow-dark: #ffb93e;
+    --white: #f1f1f1;
+    --background: #f1eadf; */

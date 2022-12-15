@@ -1,68 +1,86 @@
-<div class="contenedor">
+<div class="body">
+  <div class="contenedor">
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="formMenu">
-        <h2>MENU</h2>
-        <div>
-            <label>Primero: </label>
-            <select formControlName="primero">
-                <option value="" [hidden]="true">Selecciona un primero</option>
-                <option *ngFor="let plato of primeros" [value]="plato.id">{{plato.nombre}}</option>
-            </select>
-        </div>
-        <div>
-            <label>Segundo: </label>
-            <select formControlName="segundo">
-                <option value="" [hidden]="true">Selecciona un segundo</option>
-                <option *ngFor="let plato of segundos" [value]="plato.id">{{plato.nombre}}</option>
-            </select>
-        </div>
-        <div>
-            <label>Postre: </label>
-            <select formControlName="postre">
-                <option value="" [hidden]="true">Selecciona un postre</option>
-                <option *ngFor="let plato of postres" [value]="plato.id">{{plato.nombre}}</option>
-            </select>
-        </div>
-        <input type="submit" [disabled]="!formulario.valid" [ngClass]="{
-            'disabled': !formulario.valid}">
+      <div>
+        <label>Primero: </label>
+        <select formControlName="primero">
+          <option value="" [hidden]="true">Selecciona un primero</option>
+          <option *ngFor="let plato of primeros" [value]="plato.id">
+            {{ plato.nombre }}
+          </option>
+        </select>
+      </div>
+      <div>
+        <label>Segundo: </label>
+        <select formControlName="segundo">
+          <option value="" [hidden]="true">Selecciona un segundo</option>
+          <option *ngFor="let plato of segundos" [value]="plato.id">
+            {{ plato.nombre }}
+          </option>
+        </select>
+      </div>
+      <div>
+        <label>Postre: </label>
+        <select formControlName="postre">
+          <option value="" [hidden]="true">Selecciona un postre</option>
+          <option *ngFor="let plato of postres" [value]="plato.id">
+            {{ plato.nombre }}
+          </option>
+        </select>
+      </div>
+      <input
+        type="submit"
+        [disabled]="!formulario.valid"
+        [ngClass]="{
+          disabled: !formulario.valid
+        }"
+      />
     </form>
+  </div>
 
+  <div class="tarjetero">
+    <div class="tarjetaMenu" *ngFor="let menu of menuses">
+      <p>{{ menu.primer_plato.toUpperCase() }}</p>
+      <p>{{ menu.segundo_plato.toUpperCase() }}</p>
+      <p>{{ menu.nombre_postre.toUpperCase() }}</p>
 
-    <div class="tarjetero">
-        <div class="tarjetaMenu" *ngFor="let menu of menuses">
-            <p>{{menu.primer_plato.toUpperCase()}}</p>
-            <p>{{menu.segundo_plato.toUpperCase()}}</p>
-            <p>{{menu.nombre_postre.toUpperCase()}}</p>
-            <hr>
-            <form [formGroup]="formularioCurso" (ngSubmit)="onSubmitCurso($event)" class="formCurso">
-
-                <p class="asignacion">Asignación a un curso</p>
-                <div>
-                    <label>Curso: </label>
-                    <select formControlName="curso">
-                        <option value="" [hidden]="true">Selecciona un curso</option>
-                        <option value="1">Infantil (3-5)</option>
-                        <option value="2">Primer Ciclo (6-8)</option>
-                        <option value="3">Segundo Ciclo (9-12)</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Fecha: </label>
-                    <input type="date" class="inputFecha" formControlName="fecha">
-                </div>
-                <div class="botones">
-                    <input type="submit" [disabled]="!formularioCurso.valid" [ngClass]="{
-            'disabled': !formularioCurso.valid}" [id]="menu.id">
-                    <button class="botonBorrar" [id]="menu.id" (click)="borrarMenu($event)">BORRAR</button>
-                </div>
-
-
-            </form>
-
+      <form
+        [formGroup]="formularioCurso"
+        (ngSubmit)="onSubmitCurso($event)"
+        class="formCurso"
+      >
+        <p class="asignacion"></p>
+        <div>
+          <label>Curso: </label>
+          <select formControlName="curso">
+            <option value="" [hidden]="true">Selecciona un curso</option>
+            <option value="1">Infantil (3-5)</option>
+            <option value="2">Primer Ciclo (6-8)</option>
+            <option value="3">Segundo Ciclo (9-12)</option>
+          </select>
         </div>
-
-
-
+        <div>
+          <label>Fecha: </label>
+          <input type="date" class="inputFecha" formControlName="fecha" />
+        </div>
+        <div class="botones">
+          <input
+            type="submit"
+            [disabled]="!formularioCurso.valid"
+            [ngClass]="{
+              disabled: !formularioCurso.valid
+            }"
+            [id]="menu.id"
+          />
+          <button
+            class="botonBorrar"
+            [id]="menu.id"
+            (click)="borrarMenu($event)"
+          >
+            BORRAR
+          </button>
+        </div>
+      </form>
     </div>
-
-
+  </div>
 </div>
