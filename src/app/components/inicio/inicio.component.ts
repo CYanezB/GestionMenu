@@ -12,4 +12,18 @@ export class InicioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  semanaSeleccionada($event: any) {
+    const arrSeleccionado = $event.target.value
+    let semanaSeleccionada = arrSeleccionado.slice(-2)
+    let anoSeleccionado = arrSeleccionado.slice(0, 4)
+    console.log(anoSeleccionado);
+    console.log(semanaSeleccionada);
+
+
+
+
+
+  }
+
+
 }

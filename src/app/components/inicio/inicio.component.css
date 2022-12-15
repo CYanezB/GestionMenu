@@ -10,8 +10,12 @@ div.contenedor {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1em;
 }
 
 .menuDiario {
     background-color: var(--green-light);
+
+    width: 15%;
+    border-radius: 25px;
 }
