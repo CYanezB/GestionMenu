@@ -1,24 +1,30 @@
 @import "../../../styles.css";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Poppins;
+    background-color: var(--background);
+}
 
 .contenedor {
     display: flex;
     text-align: center;
-    width: 100%;
+    margin: 1em;
 }
 
 form {
-    border: 2px solid var(--azulclaro);
-    margin: 3em auto;
-    background-color: var(--amarillo);
-    padding: 2em;
-    width: 600px;
+    border: 1px solid var(--green-medium);
+    padding: 1em;
     border-radius: 15px;
-    font-family: montserrat;
+    font-family: Poppins;
+    height: fit-content;
 }
 
 form input {
-    margin: 1.5em;
+    margin: 1em;
 }
 
 .tituloInput {
@@ -61,9 +67,17 @@ input.ng-invalid.ng-touched {
 }
 
 .ingredientes p {
-    border: 1px solid black;
     border-radius: 15px;
     padding: 0.5em;
+    background-color: var(--green-medium);
+    color: var(--white);
+}
+
+.plato select {
+    background-color: var(--background);
+    border-radius: 20px;
+    padding: 0.5em;
+    color: var(--green-medium);
 }
 
 .aviso {
@@ -78,8 +92,7 @@ input.ng-invalid.ng-touched {
 
 
 .botonIngrediente:hover {
-    color: var(--amarillo);
-    background-color: black;
+    background-color: var(--green-dark);
 }
 
 .botonIngrediente i {
@@ -97,17 +110,23 @@ input.ng-invalid.ng-touched {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
-    margin: 5em;
-    justify-content: center;
+    margin-top: 5em;
 }
 
+
 .plato {
-    width: calc(25% - 1em);
-    background-color: var(--amarillo);
-    padding: 1em;
+    background-color: var(--green-light);
+    padding: 2em;
     border: 1px solid var(--azulclaro);
     border-radius: 15px;
+    margin: 1em;
+    width: 82%;
+}
+
+.conplato {
+    height: 28%;
+    overflow: auto;
+    width: 102%;
 }
 
 p.alergenos {
@@ -127,6 +146,7 @@ p.alergenos {
 
 .nombre {
     font-weight: bolder;
+    font-size: 13px;
 }
 
 .nombreIngrediente {
