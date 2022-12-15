@@ -1,0 +1,17 @@
+div.contenedor {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    gap: 4em;
+    text-align: center;
+}
+
+.platosSemana {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menuDiario {
+    background-color: var(--green-light);
+}

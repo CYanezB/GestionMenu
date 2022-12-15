@@ -11,6 +11,7 @@ import { CalendarioComponent } from './components/calendario/calendario.componen
 import { BrowserModule } from '@angular/platform-browser';
 import { RegistroComponent } from './components/registro/registro.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
     LoginComponent,
     CalendarioComponent,
     RegistroComponent,
-    InicioComponent
+    InicioComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,

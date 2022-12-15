@@ -30,4 +30,15 @@ export class RegistroService {
       return false
     }
   }
+  isAdmin(): boolean {
+    var token = localStorage.getItem('token');
+    this.decoded = jwt_decode(token!);
+
+
+    if (this.decoded.user_role === 'admin') {
+      return true;
+    } else {
+      return false
+    }
+  }
 }

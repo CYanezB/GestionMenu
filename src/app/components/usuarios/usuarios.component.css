@@ -1,0 +1,29 @@
+table,
+td {
+    border: 1px solid #333;
+    background-color: var(--amarillo);
+}
+
+thead,
+tfoot {
+    background-color: var(--naranja);
+    color: var(--azuloscuro);
+}
+
+.tablaUsuarios {
+    margin: 2em auto;
+    width: 50%;
+}
+
+.celda {
+    padding: 0.5em;
+}
+
+.filtros {
+    padding: 0.6em;
+    text-align: center;
+}
+
+#search-text {
+    width: 12em;
+}

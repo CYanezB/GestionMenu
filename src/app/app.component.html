@@ -1,13 +1,13 @@
 <header>
     <nav>
         <ul>
-            <li [routerLink]="" [routerLinkActive]="['activo']" *ngIf="registroService.isLogged()" [routerLinkActiveOptions]="{exact: true}">Inicio</li>
-            <li [routerLink]="['/plato/new']" [routerLinkActive]="['activo']" *ngIf="registroService.isLogged()" [routerLinkActiveOptions]="{exact: true}">Nuevo Plato</li>
-            <li [routerLink]="['/menu/new']" [routerLinkActive]="['activo']" *ngIf="registroService.isLogged()" [routerLinkActiveOptions]="{exact: true}">Nuevo Menú</li>
-            <li *ngIf="registroService.isLogged()">Usuarios</li>
+            <li [routerLink]="['']" [routerLinkActive]="['activo']" *ngIf="registroService.isLogged()" [routerLinkActiveOptions]="{exact: true}">Inicio</li>
+            <li [routerLink]="['/plato/new']" [routerLinkActive]="['activo']" *ngIf="registroService.isLogged() && registroService.isAdmin()" [routerLinkActiveOptions]="{exact: true}">Nuevo Plato</li>
+            <li [routerLink]="['/menu/new']" [routerLinkActive]="['activo']" *ngIf="registroService.isLogged() && registroService.isAdmin()" [routerLinkActiveOptions]="{exact: true}">Nuevo Menú</li>
+            <li [routerLink]="['/usuarios']" [routerLinkActive]="['activo']" *ngIf="registroService.isLogged() && registroService.isAdmin()" [routerLinkActiveOptions]="{exact: true}">Usuarios</li>
             <li [routerLink]="['/login']" [routerLinkActive]="['activo']" [routerLinkActiveOptions]="{exact: true}">Login</li>
             <li [routerLink]="['/registro']" [routerLinkActive]="['activo']" [routerLinkActiveOptions]="{exact: true}">Registro</li>
-            <li *ngIf="registroService.isLogged()">Log Out</li>
+            <li *ngIf="registroService.isLogged()"><input type="submit" value="Log Out" (click)="onLogOut()"></li>
 
         </ul>
     </nav>
