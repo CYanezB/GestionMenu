@@ -1,15 +1,31 @@
-<div class="contenedor">
-    <form class="formularioRegistro" [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <div class="inputsFormulario">
-            <label>Email:</label>
-            <input type="text" formControlName="email">
-        </div>
-        <div class="inputsFormulario">
-            <label>Contraseña:</label>
-            <input type="password" formControlName="password">
-        </div>
-        <input type="submit" value="Enviar" [disabled]="!formulario.valid" [ngClass]="{
+<body>
+
+    <div class="contenedor" [ngStyle]="{backgroundImage:'url(/assets/images/login-bg.svg)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'right' }">
+        <div class="formulario col-4">
+            <i>O</i>
+            <h3>Bienvenid@ a schoolMenu</h3>
+            <h2>Log In</h2>
+            <form class="formularioRegistro" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                <div class="inputsFormulario">
+                    <label>Email</label>
+                    <input type="text" formControlName="email">
+                </div>
+                <div class="inputsFormulario">
+                    <div class="titulo">
+                        <label>Password</label>
+                        <p class="pregunta">¿Olvidaste la contraseña?</p>
+                    </div>
+                    <input type="password" formControlName="password">
+                </div>
+                <input type="submit" value="Log In   →" class="botonenviar" [disabled]="!formulario.valid" [ngClass]="{
             'disabled': !formulario.valid 
         }">
-    </form>
-</div>
+
+                <p>No tienes cuenta? <span>Registrate aquí</span></p>
+
+            </form>
+
+        </div>
+
+    </div>
+</body>
