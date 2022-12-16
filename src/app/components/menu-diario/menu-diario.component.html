@@ -1,0 +1,47 @@
+<div class="contenedor">
+    <div class="titulo">
+        <h1>Menú Diario</h1>
+    </div>
+    <div class="menu">
+        <div class="plato" *ngIf="primero">
+            <div class="icono">
+                <p>0</p>
+            </div>
+            <div class="texto">
+                <h4>Primer plato</h4>
+                <p>{{menu.primer_plato.toUpperCase()}}</p>
+            </div>
+            <div class="info">
+                <select>
+                    <option selected>Ingredientes</option>
+                </select>
+                <select>
+                    <option selected>Alérgenos</option>
+                </select>
+            </div>
+        </div>
+        <div class="plato" *ngIf="segundo">
+            <div class="icono">
+                <p>0</p>
+            </div>
+            <div class="texto">
+                <h4>Segundo plato</h4>
+                <p>{{menu.segundo_plato.toUpperCase()}}</p>
+            </div>
+        </div>
+        <div class="plato" *ngIf="postre">
+            <div class="icono">
+                <p>0</p>
+            </div>
+            <div class="texto">
+                <h4>Postre</h4>
+                <p>{{menu.nombre_postre.toUpperCase()}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="comentarios">
+        <h4>Si tienes algo importante que consultarnos deja tu comentario aquí:</h4>
+        <textarea cols="30" rows="10"></textarea>
+        <input type="submit" value="Enviar">
+    </div>
+</div>

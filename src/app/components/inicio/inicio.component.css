@@ -15,7 +15,11 @@ div.contenedor {
 
 .menuDiario {
     background-color: var(--green-light);
-
     width: 15%;
     border-radius: 25px;
+}
+
+.notAssigned {
+    margin-top: 25%;
+    padding: 0 2em;
 }

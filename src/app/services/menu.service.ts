@@ -60,5 +60,21 @@ export class MenuService {
     );
   }
 
+  getMenuSemanalBySemanaAndCicloId(pValues: {
+    ano: number,
+    semana: number,
+    ciclo_id: number
+  }) {
+    return firstValueFrom(
+      this.HttpClient.post<any>(`${this.baseUrl}/usuarios/semana`, pValues)
+    )
+  }
+
+  getMenuById(menu_id: number) {
+    return firstValueFrom(
+      this.HttpClient.get<any>(`${this.baseUrl}/menus/${menu_id}`)
+    )
+  }
+
 
 }

@@ -12,6 +12,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RegistroComponent } from './components/registro/registro.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { MenuDiarioComponent } from './components/menu-diario/menu-diario.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
     CalendarioComponent,
     RegistroComponent,
     InicioComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    MenuDiarioComponent
   ],
   imports: [
     BrowserModule,

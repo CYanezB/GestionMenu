@@ -1,0 +1,46 @@
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3em;
+}
+
+.titulo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.menu {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.plato {
+    background-color: var(--green-light);
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.icono {
+    width: 20%;
+}
+
+.comentarios {
+    width: 50%;
+    border: 2px solid var(--green-dark);
+    padding: 1em;
+    border-radius: 20px;
+}

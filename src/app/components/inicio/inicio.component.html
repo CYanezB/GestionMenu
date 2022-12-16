@@ -2,10 +2,10 @@
     <h3 class="tituloPagina">MENU SEMANAL</h3>
     <form>
         <div class="selectCurso">
-            <select>
-                <option value="1">PRIEMR CISLCSO dqbayui</option>
-                <option value="2"></option>
-                <option value="3"></option>
+            <select (change)="cicloSeleccionado($event)">
+                <option value="1">Infantil (3-5)</option>
+                <option value="2">Primer ciclo (6-8)</option>
+                <option value="3">Segundo ciclo (9-12)</option>
             </select>
         </div>
         <div class="inputSemana">
@@ -14,30 +14,19 @@
     </form>
 
     <div class="platosSemana">
-        <div class="menuDiario">
-            <p>O</p>
-            <h5>LUNES</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-        <div class="menuDiario">
-            <p>O</p>
-            <h5>MARTES</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-        <div class="menuDiario">
-            <p>O</p>
-            <h5>MIÉRCOLES</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-        <div class="menuDiario">
-            <p>O</p>
-            <h5>JUEVES</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-        <div class="menuDiario">
-            <p>O</p>
-            <h5>VIERNES</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <div class="menuDiario" *ngFor="let menu of menuSemanal; let indice = index" [routerLink]="['/dia', menu.menu_id]">
+            <div *ngIf="menu !== null">
+                <p>0</p>
+                <h5>{{dias[indice]}}</h5>
+                <p>{{menu.fecha | date: 'dd-MM-YYYY'}}</p>
+                <p>{{menu.nombre_primero}}</p>
+                <p>{{menu.nombre_segundo}}</p>
+                <p>{{menu.nombre_postre}}</p>
+            </div>
+            <div class="notAssigned" *ngIf="menu === null">
+                <h5>{{dias[indice]}}</h5>
+                <h5>Aún no se ha asignado un menú este día al ciclo seleccionado</h5>
+            </div>
         </div>
     </div>
 </div>

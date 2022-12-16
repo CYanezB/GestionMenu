@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
+import { MenuDiarioComponent } from './components/menu-diario/menu-diario.component';
 import { MenuFormComponent } from './components/menu-form/menu-form.component';
 import { PlatosFormComponent } from './components/platos-form/platos-form.component';
 import { RegistroComponent } from './components/registro/registro.component';
@@ -12,6 +13,7 @@ import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
+  { path: 'dia/:menu_id', component: MenuDiarioComponent },
   { path: 'menu/new', component: MenuFormComponent, canActivate: [LoginGuard, AdminGuard] },
   { path: 'plato/new', component: PlatosFormComponent, canActivate: [LoginGuard, AdminGuard] },
   { path: 'calendario', component: CalendarioComponent, canActivate: [LoginGuard] },
