@@ -1,6 +1,7 @@
 @import "../../../styles.css";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
 
 body {
     display: flex;
@@ -13,6 +14,7 @@ body {
     display: flex;
     text-align: center;
     margin: 1em;
+    width: 28em;
 }
 
 form {
@@ -21,6 +23,17 @@ form {
     border-radius: 15px;
     font-family: Poppins;
     height: fit-content;
+    text-align: left;
+}
+
+form select {
+    background: var(--green-light);
+    border-color: var(--green-light);
+    padding: 0.5em;
+    border-radius: 20px;
+    color: var(--background);
+    font-family: 'Manrope';
+    margin-left: 6em;
 }
 
 form input {
@@ -29,20 +42,40 @@ form input {
 
 .tituloInput {
     font-weight: bold;
-    text-decoration: underline;
-    margin-right: 10px;
+    color: var(--green-dark);
 }
 
 .alergenos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    width: 70%;
     margin: 1em auto;
 }
 
 .alergenos div label {
-    width: 6em;
+    background-color: var(--white);
+    padding: 0.5em;
+    border-radius: 12px;
+    margin: 0.3em;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.alergenos div label:hover {
+    background-color: var(--green-medium);
+    color: var(--background);
+}
+
+.alergenos div label.selected {
+    background-color: var(--green-medium);
+    color: var(--background);
+}
+
+input {
+    background-color: var(--background);
+    border: 2px solid var(--green-medium);
+    border-radius: 20px;
+    font-family: Poppins;
+    padding: 0.2em;
 }
 
 
@@ -62,7 +95,6 @@ input.ng-invalid.ng-touched {
     flex-wrap: wrap;
     gap: 1em;
     text-align: center;
-    justify-content: center;
     margin-bottom: 1em;
 }
 
@@ -76,8 +108,9 @@ input.ng-invalid.ng-touched {
 .plato select {
     background-color: var(--background);
     border-radius: 20px;
-    padding: 0.5em;
     color: var(--green-medium);
+    font-family: Manrope;
+    margin-left: 3em;
 }
 
 .aviso {
@@ -110,23 +143,33 @@ input.ng-invalid.ng-touched {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 5em;
+    margin-top: 15em;
+}
+
+.platos h2 {
+    position: absolute;
+    margin-top: -2em;
+    text-align: center;
+    font-family: 'Poppins';
+    color: var(--green-medium);
+    font-size: 4em;
+    margin-left: 6em;
 }
 
 
 .plato {
     background-color: var(--green-light);
-    padding: 2em;
-    border: 1px solid var(--azulclaro);
+    padding: 1em;
     border-radius: 15px;
     margin: 1em;
-    width: 82%;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
 }
 
 .conplato {
-    height: 28%;
+    height: 27%;
     overflow: auto;
-    width: 102%;
 }
 
 p.alergenos {
@@ -141,15 +184,74 @@ p.alergenos {
 
 .platos h3 {
     width: 100%;
-    color: white;
+    color: var(--green-medium);
+    font-family: Poppins;
 }
 
 .nombre {
     font-weight: bolder;
-    font-size: 13px;
+    font-size: 12px;
+    width: 5em;
+    color: var(--green-dark);
 }
 
 .nombreIngrediente {
     font-size: 0.7em;
     font-style: oblique;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--green-light);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--background);
+}
+
+.botoningredientes {
+    background-color: var(--green-dark);
+    border-radius: 20px;
+    border: none;
+    padding: 0.4em;
+    color: var(--background);
+    font-size: 14px;
+    width: 14%;
+    margin-left: -8px;
+    transition: .5s;
+}
+
+.botoningredientes:hover {
+    background-color: var(--green-medium);
+    width: 16%;
+}
+
+.botonenviar {
+    background-color: var(--green-dark);
+    border-radius: 20px;
+    border: none;
+    padding: 0.4em;
+    color: var(--background);
+    font-size: 14px;
+    width: 80%;
+    text-align: center;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.botonenviar:hover {
+    background-color: var(--green-medium);
+    padding: 0.6em;
+}
+
+.enviar {
+    margin-left: 8%;
+}
+
+#nombreplato {
+    margin-right: 2.4em;
 }

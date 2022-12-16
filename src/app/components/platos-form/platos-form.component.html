@@ -2,15 +2,15 @@
     <div class="contenedor col-4">
         <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label class="tituloInput">Nombre:</label>
-                <input type="text" formControlName="nombre">
+                <label class="tituloInput" id="nombreplato">Nombre:</label>
+                <input type="text" formControlName="nombre" placeholder="Nombre del plato">
                 <p class="error" *ngIf="checkError('nombre', 'required')">El campo nombre es requerido</p>
             </div>
             <div>
                 <label class="tituloInput">Ingredientes:</label>
                 <input type="text" #inputIngredientes placeholder="Añade los ingredientes">
 
-                <button type="button" class="btn btn-outline-info" (click)="nuevoIngrediente($event)">Añadir</button>
+                <button type="button" class="botoningredientes" (click)="nuevoIngrediente($event)">Añadir</button>
                 <p class="error" *ngIf="botonIngredientes !== ''">{{botonIngredientes}}</p>
 
 
@@ -18,16 +18,15 @@
             <div class="ingredientes">
                 <p class='botonIngrediente' (click)='borrarIngrediente($event)' *ngFor="let ingrediente of ingredientes; let indice = index" [id]="indice">{{ingrediente}} <i class="fas fa-times-circle"></i></p>
             </div>
-            <label class="tituloInput">Alérgenos:</label>
+            <label class="tituloInput">Alérgias</label>
             <div class="alergenos">
 
                 <div *ngFor="let alergeno of alergenos; let indice = index">
-                    <label>{{alergeno}}</label>
-                    <input type="checkbox" (change)="seleccionAlergenos($event)" [value]="indice + 1">
+                    <label [ngClass]="{selected: alergenosSeleccionados.includes(indice+1)}">{{alergeno}}
+                        <input type="checkbox" (change)="seleccionAlergenos($event)" [value]="indice + 1" hidden></label>
                 </div>
             </div>
             <div>
-                <label class="tituloInput">Categoría</label>
                 <select formControlName="categoria" id="cat">
                     <option value="" hidden>Seleccciona la categoría</option>
                     <option value="primero">Primero</option>
@@ -37,46 +36,50 @@
                 <p class="error" *ngIf="checkError('categoria', 'required')">El campo categoría es requerido</p>
 
             </div>
-            <input type="submit" value="Enviar" [disabled]="!formulario.valid || ingredientes.length === 0" [ngClass]="{
+            <div class="enviar">
+                <input type="submit" class="botonenviar" value="Enviar" [disabled]="!formulario.valid || ingredientes.length === 0" [ngClass]="{
             'disabled': !formulario.valid 
         }">
+            </div>
         </form>
     </div>
-
-    <div class="platos col-7">
-        <div>
-            <h3>PRIMEROS</h3>
-            <div class="conplato">
-                <div class="plato" *ngFor="let p of plato" [ngClass]="{'hidden' : p.categoria !== 'primero'}">
-                    <p class="nombre">{{p.nombre.toUpperCase()}}</p>
-                    <select>
-                        <option hidden>Ingredientes</option>
-                        <option *ngFor="let ingrediente of p.ingredientes">{{ingrediente.nombre}}</option>
-                    </select>
+    <div class="imagen col-8" [ngStyle]="{backgroundImage:'url(/assets/images/verduras1.svg)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain' }">
+        <div class="platos col-12">
+            <h2>Crea Un Plato</h2>
+            <div>
+                <h3>PRIMEROS</h3>
+                <div class="conplato col-12">
+                    <div class="plato" *ngFor="let p of plato" [ngClass]="{'hidden' : p.categoria !== 'primero'}">
+                        <p class="nombre">{{p.nombre.toUpperCase()}}</p>
+                        <select>
+                            <option hidden>Ingredientes</option>
+                            <option *ngFor="let ingrediente of p.ingredientes" disabled>{{ingrediente.nombre}}</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <h3>SEGUNDOS</h3>
-            <div class="conplato">
-                <div class="plato" *ngFor="let p of plato" [ngClass]="{'hidden' : p.categoria !== 'segundo'}">
-                    <p class="nombre">{{p.nombre.toUpperCase()}}</p>
-                    <select>
-                        <option hidden>Ingredientes</option>
-                        <option *ngFor="let ingrediente of p.ingredientes">{{ingrediente.nombre}}</option>
-                    </select>
+            <div>
+                <h3>SEGUNDOS</h3>
+                <div class="conplato col-12">
+                    <div class="plato" *ngFor="let p of plato" [ngClass]="{'hidden' : p.categoria !== 'segundo'}">
+                        <p class="nombre">{{p.nombre.toUpperCase()}}</p>
+                        <select>
+                            <option hidden>Ingredientes</option>
+                            <option *ngFor="let ingrediente of p.ingredientes" disabled>{{ingrediente.nombre}}</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <h3>POSTRES</h3>
-            <div class="conplato">
-                <div class="plato" *ngFor="let p of plato" [ngClass]="{'hidden' : p.categoria !== 'postre'}">
-                    <p class="nombre">{{p.nombre.toUpperCase()}}</p>
-                    <select>
-                        <option hidden>Ingredientes</option>
-                        <option *ngFor="let ingrediente of p.ingredientes">{{ingrediente.nombre}}</option>
-                    </select>
+            <div>
+                <h3>POSTRES</h3>
+                <div class="conplato col-12">
+                    <div class="plato" *ngFor="let p of plato" [ngClass]="{'hidden' : p.categoria !== 'postre'}">
+                        <p class="nombre">{{p.nombre.toUpperCase()}}</p>
+                        <select>
+                            <option hidden>Ingredientes</option>
+                            <option *ngFor="let ingrediente of p.ingredientes" disabled>{{ingrediente.nombre}}</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
