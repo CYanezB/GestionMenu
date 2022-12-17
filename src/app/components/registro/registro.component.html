@@ -1,23 +1,59 @@
-<div class="contenedor">
-    <form class="formularioRegistro" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+<body>
+  <div
+    class="contenedor"
+    [ngStyle]="{
+      backgroundImage: 'url(/assets/images/registro-bg.svg)',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'contain',
+      backgroundPosition: 'right',
+      backgroundPositionY: 'bottom'
+    }"
+  >
+    <div class="formulario col-8 col-md-3 col-sm-6">
+      <div class="logo-svg">
+        <img src="../../../assets/images/simbolo.svg" alt="SchoolMenu-logo" />
+      </div>
+      <h3>Bienvenido@ a SchoolMenu</h3>
+      <h2>Registro</h2>
+      <form
+        class="formularioRegistro"
+        [formGroup]="formulario"
+        (ngSubmit)="onSubmit()"
+      >
         <div class="inputsFormulario">
-            <label>Nombre:</label>
-            <input type="text" formControlName="nombre">
+          <label><i class="bi bi-person"></i> </label>
+          <input type="text" formControlName="nombre" placeholder="Nombre" />
         </div>
         <div class="inputsFormulario">
-            <label>Email:</label>
-            <input type="text" formControlName="email">
+          <label></label>
+          <input type="text" formControlName="email" placeholder="Email" />
         </div>
         <div class="inputsFormulario">
-            <label>Contraseña:</label>
-            <input type="password" formControlName="password">
+          <label></label>
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+          />
         </div>
         <div class="inputsFormulario">
-            <label>Repite la contraseña:</label>
-            <input type="password" formControlName="repitePassword">
+          <label></label>
+          <input
+            type="password"
+            formControlName="repitePassword"
+            placeholder="Repite password"
+          />
         </div>
-        <input type="submit" value="Enviar" [disabled]="!formulario.valid" [ngClass]="{
-            'disabled': !formulario.valid 
-        }">
-    </form>
-</div>
+        <input
+          class="botonEnviar"
+          type="submit"
+          value="Crear Cuenta"
+          [disabled]="!formulario.valid"
+          [ngClass]="{
+            disabled: !formulario.valid
+          }"
+        />
+      </form>
+    </div>
+  </div>
+</body>
