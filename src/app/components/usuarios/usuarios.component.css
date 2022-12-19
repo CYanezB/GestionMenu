@@ -38,6 +38,7 @@ tfoot {
     color: var(--green-medium);
     font-family: Manrope;
     padding: .4em;
+    border: none;
 }
 
 h2 {
@@ -57,6 +58,7 @@ h2 {
     padding: .5em;
     font-weight: 700;
     width: 12em;
+    border: none;
 }
 
 button {
@@ -75,6 +77,7 @@ button {
     font-weight: 700;
     width: 20em;
     padding: .4em;
+    border: 2px solid var(--green-medium);
 }
 
 .celda1 {
