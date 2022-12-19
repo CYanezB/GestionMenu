@@ -1,65 +1,172 @@
-.contenedor {
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
 
-    width: 100%;
+h2 {
+  font-family: Montserrat;
+  color: var(--green-medium);
+  text-align: center;
+  font-size: 64px;
+  margin-top: 1.5em;
+  font-weight: 600;
 }
 
+p {
+  font-weight: 600;
+}
+
+.body {
+  width: 100%;
+  display: flex;
+}
+
+.menu-contenedor {
+  margin-top: 50px;
+  width: 50%;
+  padding: 10px;
+  margin-left: 50px;
+}
+
+.tarjetero-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: left;
+  margin-top: 60px;
+  margin-right: 50px;
+}
 
 form.formMenu {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--amarillo);
-    padding: 3em;
-    width: 600px;
-    margin: 2em auto;
-    gap: 2em;
-    text-align: center;
-    border-radius: 15px;
-    border: 2px solid black
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  padding: 2em;
+  width: 300px;
+  gap: 1em;
+  text-align: left;
+  border-radius: 20px;
+  border: 2px solid var(--green-light);
 }
 
-form label {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-form select {
-    margin-left: 1em;
+.tarjetaMenu select {
+  background-color: var(--background);
+  color: var(--green-light);
+  font-size: 0.8em;
+  font-weight: 400;
+  border-radius: 20px;
+  border: 0;
+  cursor: pointer;
+  padding: 0.5em;
+  margin-left: 8px;
 }
 
 .inputFecha {
-    margin-left: 1em;
+  margin-left: 1em;
+  margin: 1em;
+  background-color: var(--background);
+  color: var(--green-light);
+  font-size: 0.8em;
+  font-weight: 400;
+  border-radius: 20px;
+  border: 0;
+  cursor: pointer;
+  padding: 0.5em;
+  margin-left: 8px;
 }
 
-.tarjetero {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    justify-content: center;
+.boton-enviar {
+  background-color: var(--green-dark);
+  border-radius: 20px;
+  border: none;
+  padding: 0.4em;
+  color: var(--background);
+  font-size: 14px;
+  width: 80%;
+  text-align: center;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.boton-enviar:hover {
+  background-color: var(--green-medium);
+  padding: 0.6em;
 }
 
 .tarjetaMenu {
-    border: 1px solid grey;
-    background-color: var(--naranja);
-    border-radius: 15px;
-    padding: 1em;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: var(--green-light);
+  border-radius: 20px;
+  padding: 1em;
+  text-align: left;
+  width: 412px;
+  margin: 0 auto;
 }
 
-.asignacion {
-    font-weight: bold;
+.botonBorrar,
+input.disabled {
+  background-color: var(--green-dark);
+  border-radius: 20px;
+  border: none;
+  padding: 0.4em;
+  color: var(--background);
+  font-size: 14px;
+  width: 80%;
+  text-align: center;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
-.formCurso {
-    text-align: center;
+.botonBorrar:hover {
+  background-color: var(--green-medium);
+  padding: 0.6em;
 }
 
-.botonBorrar {
-    height: 2em;
-    width: 80px;
-    margin-left: 1em;
-    border-radius: 15px;
+.form.form-menu label {
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.formMenu select {
+  background-color: var(--green-light);
+  color: var(--background);
+  font-family: Manrope;
+  text-align: left;
+  font-size: 0.8em;
+  font-weight: 300;
+  border-radius: 20px;
+  border: 0;
+  cursor: pointer;
+  padding: 0.5em;
+  margin-left: 8px;
+}
+
+.formMenu label {
+  font-weight: 500;
+  font-size: 0.9em;
 }
 
 .botones {
-    margin: 1em;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  margin-top: 10px;
 }
+
+.nombres-platos {
+  width: 135px;
+}
+
+/* 
+  --green-light: #7bc0b3;
+    --green-medium: #2d856f;
+    --green-dark: #0a543b;
+
+    --rose-light: #f8d5cf;
+    --rose-medium: #ea9f82;
+    --rose-dark: #ea424e;
+
+    --yellow-light: #ffda9f;
+    --yellow-dark: #ffb93e;
+    --white: #f1f1f1;
+    --background: #f1eadf; */

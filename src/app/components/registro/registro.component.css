@@ -1,21 +1,86 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+body {
+  font-family: Montserrat;
+}
+h2 {
+  font-family: Montserrat;
+  color: var(--green-medium);
+  font-size: 50px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.3em;
+  color: var(--green-medium);
+}
+
+.titulo {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
 .contenedor {
-    background-color: var(--amarillo);
-    text-align: center;
-    width: 300px;
-    margin: 2em auto;
-    padding: 2em;
-    border-radius: 15px;
-    border: 2px solid tomato;
+  margin-top: 60px;
+  margin-left: 160px;
 }
 
 .formularioRegistro {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .inputsFormulario {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.inputsFormulario input {
+  background-color: var(--background);
+  text-decoration: none;
+  border-radius: 15px;
+  border: var(--green-medium) 1.5px solid;
+  padding: 0.4em;
+  color: var(--green-dark);
+  font-size: 0.8em;
+}
+
+.inputsFormulario i {
+  position: absolute;
+  padding-left: 8px;
+  padding-top: 3px;
+  pointer-events: none;
+  padding-left: 10px;
+  color: var(--green-medium);
+}
+
+.left-icon input {
+  padding-left: 30px;
+}
+
+.botonEnviar {
+  background-color: var(--green-light);
+  border-radius: 15px;
+  border: none;
+  padding: 0.4em;
+  color: var(--background);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.botonEnviar:hover {
+  background-color: var(--green-medium);
+  padding: 0.6em;
+}
+
+.logo-svg {
+  width: 100px;
+  margin: 0 auto;
+  margin-bottom: 2em;
 }
