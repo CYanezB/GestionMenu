@@ -111,6 +111,7 @@ input.ng-invalid.ng-touched {
     color: var(--green-medium);
     font-family: Manrope;
     margin-left: 3em;
+    height: 2em;
 }
 
 .aviso {

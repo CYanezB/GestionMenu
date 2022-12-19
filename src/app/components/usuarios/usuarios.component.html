@@ -4,7 +4,6 @@
         <thead>
             <tr>
                 <th colspan="2" class="filtros">
-                    <label>Buscar:</label>
                     <form [formGroup]="filtro">
                         <input type="text" (input)="filtrarPorNombre()" id="search-text" formControlName="input" placeholder="Introduce nombre o email">
                     </form>
