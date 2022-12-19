@@ -20,40 +20,36 @@
         [formGroup]="formulario"
         (ngSubmit)="onSubmit()"
       >
-        <div class="inputsFormulario">
-          <label><i class="bi bi-person"></i> </label>
-          <input type="text" formControlName="nombre" placeholder="Nombre" />
-        </div>
-        <div class="inputsFormulario">
-          <label></label>
-          <input type="text" formControlName="email" placeholder="Email" />
-        </div>
-        <div class="inputsFormulario">
-          <label></label>
-          <input
-            type="password"
-            formControlName="password"
-            placeholder="Password"
-          />
-        </div>
-        <div class="inputsFormulario">
-          <label></label>
-          <input
-            type="password"
-            formControlName="repitePassword"
-            placeholder="Repite password"
-          />
-        </div>
-        <input
-          class="botonEnviar"
-          type="submit"
-          value="Crear Cuenta"
+    <div class="inputsFormulario left-icon">
+      <i class="bi bi-person"></i>
+      <input type="text" formControlName="nombre" placeholder="Nombre" />  
+    </div>
+        
+    <div class="inputsFormulario left-icon">
+      <i class="bi bi-envelope"></i>
+      <input type="text" formControlName="email" placeholder="Email" />  
+    </div>
+
+
+    <div class="inputsFormulario left-icon">
+      <i class="bi bi-key"></i>
+      <input type="password" formControlName="password" placeholder="Password" />  
+    </div>
+
+
+    <div class="inputsFormulario left-icon">
+      <i class="bi bi-key"></i>
+      <input type="password" formControlName="repitePassword" placeholder="Repite Password" />  
+    </div>
+
+    <input class="botonEnviar" type="submit" value="Crear Cuenta"
           [disabled]="!formulario.valid"
           [ngClass]="{
             disabled: !formulario.valid
           }"
-        />
+    />
       </form>
     </div>
   </div>
 </body>
+
