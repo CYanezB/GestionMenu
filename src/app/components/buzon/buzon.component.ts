@@ -4,6 +4,7 @@ import { BuzonService } from 'src/app/services/buzon.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import * as dayjs from 'dayjs'
 import { MenuService } from 'src/app/services/menu.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-buzon',
@@ -59,9 +60,28 @@ export class BuzonComponent implements OnInit {
   }
 
   async deleteComentario(id: number) {
-    let response = await this.buzonService.deleteComentario(id)
-    console.log(response);
-    this.getAllComentarios()
+    Swal.fire({
+      title: '¿Seguro?',
+      text: "Esto no puede revertirse",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#2d856f',
+      cancelButtonColor: 'tomato',
+      confirmButtonText: 'Si, estoy seguro',
+      cancelButtonText: 'Cancelar'
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        let response = await this.buzonService.deleteComentario(id)
+        console.log(response);
+        this.getAllComentarios()
+        Swal.fire(
+          'Eliminado',
+          'El comentario ha sido eliminado',
+          'success'
+        )
+      }
+    })
+
 
   }
 }

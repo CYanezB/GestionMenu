@@ -6,6 +6,10 @@ header {
     margin-top: 1em;
 }
 
+.icono {
+    cursor: pointer;
+}
+
 header nav ul {
     display: flex;
     list-style: none;
@@ -16,13 +20,16 @@ header nav ul {
 
 header nav ul li {
     cursor: pointer;
+}
+
+header nav ul li.componente {
     height: 3em;
     padding: 0.7em;
     border-radius: 20px;
     transition: 0.5s;
 }
 
-header nav ul li:hover {
+header nav ul li.componente:hover {
     background-color: var(--green-light);
 }
 

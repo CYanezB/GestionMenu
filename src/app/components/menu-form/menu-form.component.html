@@ -30,15 +30,9 @@
             </option>
           </select>
         </div>
-        <input
-          class="boton-enviar"
-          type="submit"
-          value="Enviar"
-          [disabled]="!formulario.valid"
-          [ngClass]="{
+        <input class="boton-enviar" type="submit" value="Enviar" [disabled]="!formulario.valid" [ngClass]="{
             disabled: !formulario.valid
-          }"
-        />
+          }" />
       </form>
     </div>
 
@@ -50,11 +44,7 @@
           <p>{{ menu.nombre_postre.toLowerCase() }}</p>
         </div>
         <div class="form-tarjeta">
-          <form
-            [formGroup]="formularioCurso"
-            (ngSubmit)="onSubmitCurso($event)"
-            class="formCurso"
-          >
+          <form [formGroup]="formularioCurso" (ngSubmit)="onSubmitCurso($event)" class="formCurso">
             <div>
               <label>Curso: </label>
               <select formControlName="curso">
@@ -70,21 +60,10 @@
               <input type="date" class="inputFecha" formControlName="fecha" />
             </div>
             <div class="botones">
-              <input
-                class="boton-enviar"
-                type="submit"
-                value="Enviar"
-                [disabled]="!formularioCurso.valid"
-                [ngClass]="{
+              <input class="boton-enviar" type="submit" value="Enviar" [disabled]="!formularioCurso.valid" [ngClass]="{
                   disabled: !formularioCurso.valid
-                }"
-                [id]="menu.id"
-              />
-              <button
-                class="botonBorrar"
-                [id]="menu.id"
-                (click)="borrarMenu($event)"
-              >
+                }" [id]="menu.id" />
+              <button class="botonBorrar" (click)="borrarMenu(menu.id)">
                 Borrar
               </button>
             </div>

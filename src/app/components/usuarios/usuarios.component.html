@@ -30,7 +30,7 @@
                     </select>
                     <button (click)="onClick(usuario.id, selectRole)"><i class="fas fa-edit"></i></button>
                 </td>
-                <td class="celda2"><button (click)="deleteUsuario($event)" [id]="usuario.id"><i class="fas fa-trash-alt"></i></button></td>
+                <td class="celda2"><button (click)="deleteUsuario(usuario.id)"><i class="fas fa-trash-alt"></i></button></td>
             </tr>
         </tbody>
     </table>

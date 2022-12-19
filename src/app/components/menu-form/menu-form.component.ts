@@ -105,16 +105,37 @@ export class MenuFormComponent implements OnInit {
     )
   }
 
-  async borrarMenu($event: any) {
+  async borrarMenu(menu_id: number) {
+
     try {
-      $event.preventDefault()
-      const menuBorrado = await this.menuService.deleteMenuById(($event.target.id))
-      console.log(menuBorrado);
+      Swal.fire({
+        title: '¿Seguro?',
+        text: "Esta acción no puede revertirse",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#2d856f',
+        cancelButtonColor: 'tomato',
+        confirmButtonText: 'Si, estoy seguro',
+        cancelButtonText: 'Cancelar'
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          const menuBorrado = await this.menuService.deleteMenuById((menu_id))
+          console.log(menuBorrado);
+          Swal.fire(
+            'Hecho',
+            'Has eliminado correctamente este menú',
+            'success'
+          )
+          this.getAllMenuses()
+
+        }
+      })
     } catch (error) {
       console.log(error);
-    }
 
+    }
   }
+
 
   checkError(field: string, error: string): boolean | undefined {
     return this.formulario.get(field)?.hasError(error) && this.formulario.get(field)?.touched

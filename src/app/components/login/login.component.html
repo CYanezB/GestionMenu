@@ -1,8 +1,5 @@
 <div class="contenedor" [ngStyle]="{backgroundImage:'url(/assets/images/login-bg.svg)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'right' }">
     <div class="formulario col-4">
-        <div class="icono">
-            <img src="../../../assets/images/simbolo.svg" alt="SchoolMenu-logo" />
-        </div>
         <h3>Bienvenid@ a schoolMenu</h3>
         <h2>Log In</h2>
         <form class="formularioRegistro" [formGroup]="formulario" (ngSubmit)="onSubmit()">
@@ -18,7 +15,7 @@
                 <input type="password" formControlName="password" placeholder="Introduce tu contraseña">
             </div>
             <input type="submit" value="Log In   →" class="botonenviar" [disabled]="!formulario.valid" [ngClass]="{
-            'disabled': !formulario.valid 
+            'undisabled': formulario.valid 
         }">
 
             <p>No tienes cuenta? <span (click)="navigateRegistro()">Registrate aquí</span></p>

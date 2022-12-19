@@ -1,6 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
 .formulario {
+  margin-top: 8em;
   height: 50vh;
   width: 50vh;
 }
@@ -70,14 +71,19 @@ h3 {
   border: none;
   padding: 0.4em;
   color: var(--background);
-  font-size: 14px;
+  font-size: 1em;
   font-weight: 600;
   text-align: center;
   transition: 0.5s;
-  cursor: pointer;
+
 }
 
-.botonEnviar:hover {
+.undisabled {
+  cursor: pointer;
+  background-color: var(--green-medium);
+}
+
+.botonEnviar.undisabled:hover {
   background-color: var(--green-medium);
   padding: 0.6em;
 }

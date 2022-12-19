@@ -77,20 +77,34 @@ export class UsuariosComponent implements OnInit {
     }
   }
 
-  async deleteUsuario($event: any) {
+  async deleteUsuario(usuario_id: any) {
+
     try {
-      let response = await this.usuariosService.deleteUser($event.target.id)
-      console.log(response);
-      this.getAllUsuarios()
-      Swal.fire(
-        'Hecho',
-        'Has eliminado correctamente a este usuario',
-        'success'
-      )
+      Swal.fire({
+        title: '¿Seguro?',
+        text: "Esta acción no puede revertirse",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#2d856f',
+        cancelButtonColor: 'tomato',
+        confirmButtonText: 'Si, estoy seguro',
+        cancelButtonText: 'Cancelar'
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          let response = await this.usuariosService.deleteUser(usuario_id)
+          console.log(response);
+          Swal.fire(
+            'Hecho',
+            'Has eliminado correctamente a este usuario',
+            'success'
+          )
+          this.getAllUsuarios()
+
+        }
+      })
     } catch (error) {
       console.log(error);
 
     }
-
   }
 }

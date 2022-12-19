@@ -24,13 +24,14 @@ tfoot {
     padding: 0.5em;
     color: var(--green-medium);
     border: 1px solid var(--green-medium);
-    width: 24em;
+    width: 30em;
 }
 
 .filtros {
     padding: 0.6em;
-    text-align: center;
+    text-align: left;
 }
+
 
 #search-text {
     background-color: var(--background);
@@ -39,6 +40,9 @@ tfoot {
     font-family: Manrope;
     padding: .4em;
     border: none;
+    width: 16em;
+    text-align: center;
+    margin-left: 3em;
 }
 
 h2 {
@@ -92,10 +96,11 @@ button {
     color: var(--green-medium);
     border-top: 1px solid var(--green-medium);
     border-bottom: 1px solid var(--green-medium);
+    width: 6em;
+    text-align: center;
 }
 
 .celda2 button {
-    margin-left: 12em;
     transition: 0.5s;
 }
 

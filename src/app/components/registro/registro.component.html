@@ -6,9 +6,6 @@
       backgroundPositionY: 'bottom'
     }">
   <div class="formulario col-8 col-md-3 col-sm-6">
-    <div class="logo-svg">
-      <img src="../../../assets/images/simbolo.svg" alt="SchoolMenu-logo" />
-    </div>
     <h3>Bienvenido@ a SchoolMenu</h3>
     <h2>Registro</h2>
     <form class="formularioRegistro" [formGroup]="formulario" (ngSubmit)="onSubmit()">
@@ -35,7 +32,7 @@
       </div>
 
       <input class="botonEnviar" type="submit" value="Crear Cuenta" [disabled]="!formulario.valid" [ngClass]="{
-            disabled: !formulario.valid
+            'undisabled': formulario.valid
           }" />
     </form>
   </div>

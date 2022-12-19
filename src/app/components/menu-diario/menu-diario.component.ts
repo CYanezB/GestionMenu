@@ -3,6 +3,7 @@ import { FormControl, FormGroup, MinLengthValidator, Validators } from '@angular
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 import { PlatosService } from 'src/app/services/platos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu-diario',
@@ -52,12 +53,23 @@ export class MenuDiarioComponent implements OnInit {
   }
 
   async onSubmit() {
-    let pValues = {
-      mensaje: this.comentario.value.mensaje,
-      menu_id: this.menu.id
+    try {
+      let pValues = {
+        mensaje: this.comentario.value.mensaje,
+        menu_id: this.menu.id
+      }
+      let response = await this.menuService.nuevoComentario(pValues)
+      console.log(response);
+      Swal.fire(
+        'Hecho',
+        'Tu comentario se ha guardado correctamente, nos pondremos en contacto contigo de ser necesario',
+        'success'
+      )
+      this.comentario.reset()
+    } catch (error) {
+      console.log(error);
+
     }
-    let response = await this.menuService.nuevoComentario(pValues)
-    console.log(response);
   }
 
   clickVolver() {

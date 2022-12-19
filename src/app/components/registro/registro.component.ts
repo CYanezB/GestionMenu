@@ -56,7 +56,7 @@ export class RegistroComponent implements OnInit {
         )
         setTimeout(() => {
           this.router.navigate(['/login'])
-        }, 3000);
+        }, 2000);
       }
     } catch (error) {
       console.log(error);
