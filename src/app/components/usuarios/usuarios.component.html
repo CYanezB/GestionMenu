@@ -1,9 +1,9 @@
 <div class="contenedor">
+    <h2>Usuarios</h2>
     <table class="tablaUsuarios">
         <thead>
             <tr>
                 <th colspan="2" class="filtros">
-                    <label>Buscar:</label>
                     <form [formGroup]="filtro">
                         <input type="text" (input)="filtrarPorNombre()" id="search-text" formControlName="input" placeholder="Introduce nombre o email">
                     </form>
@@ -20,7 +20,7 @@
         </thead>
         <tbody>
             <tr class="usuario" *ngFor="let usuario of Usuarios">
-                <td class="celda">{{usuario.nombre}}</td>
+                <td class="celda1">{{usuario.nombre}}</td>
                 <td class="celda">{{usuario.email}}</td>
                 <td class="celda">
                     <select #selectRole>
@@ -28,9 +28,9 @@
                         <option value="admin" *ngIf="usuario.role === 'tutor'">ADMIN</option>
                         <option value="tutor" *ngIf="usuario.role === 'admin'">TUTOR</option>
                     </select>
-                    <input type="submit" value="Update" (click)="onClick(usuario.id, selectRole)">
+                    <button (click)="onClick(usuario.id, selectRole)"><i class="fas fa-edit"></i></button>
                 </td>
-                <td><button (click)="deleteUsuario($event)" [id]="usuario.id">Eliminar usuario</button></td>
+                <td class="celda2"><button (click)="deleteUsuario($event)" [id]="usuario.id"><i class="fas fa-trash-alt"></i></button></td>
             </tr>
         </tbody>
     </table>
