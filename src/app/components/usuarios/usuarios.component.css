@@ -1,22 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
+
 table,
 td {
-    border: 1px solid #333;
-    background-color: var(--amarillo);
+    background-color: var(--background);
 }
 
 thead,
 tfoot {
-    background-color: var(--naranja);
-    color: var(--azuloscuro);
+    background-color: var(--green-light);
+    color: var(--green-dark);
 }
 
 .tablaUsuarios {
     margin: 2em auto;
     width: 50%;
+    box-shadow: 0px 4px 20px rgba(45, 133, 111, 0.5);
 }
 
 .celda {
     padding: 0.5em;
+    color: var(--green-medium);
+    border: 1px solid var(--green-medium);
 }
 
 .filtros {
@@ -25,5 +30,62 @@ tfoot {
 }
 
 #search-text {
+    background-color: var(--background);
+    border-radius: 20px;
+    color: var(--green-medium);
+    font-family: Manrope;
+    padding: .4em;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Poppins';
+    color: var(--green-medium);
+    font-size: 4em;
+    margin-top: 1em;
+}
+
+.filtros select {
+    background-color: var(--background);
+    border-radius: 20px;
+    color: var(--green-dark);
+    font-family: Manrope;
+    margin-left: 3em;
+    padding: .5em;
+    font-weight: 700;
     width: 12em;
+}
+
+button {
+    border: none;
+    padding: 0.5em;
+    text-align: center;
+    background-color: var(--background);
+    color: var(--green-medium);
+    margin-left: .5em;
+}
+
+.celda select {
+    background-color: var(--background);
+    border-radius: 20px;
+    color: var(--green-dark);
+    font-family: Manrope;
+    margin-left: 3em;
+    font-weight: 700;
+    width: 10em;
+    padding: .4em;
+}
+
+.celda1 {
+    padding: 0.5em;
+    color: var(--green-medium);
+    border-top: 1px solid var(--green-medium);
+    border-bottom: 1px solid var(--green-medium);
+}
+
+.celda2 {
+    padding: 0.5em;
+    color: var(--green-medium);
+    border-top: 1px solid var(--green-medium);
+    border-bottom: 1px solid var(--green-medium);
 }
