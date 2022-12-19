@@ -1,11 +1,16 @@
-<div class="contenedor">
-    <div class="titulo">
-        <h1>Menú Diario</h1>
-    </div>
+<div class="contenedor" [ngStyle]="{
+    backgroundImage: 'url(/assets/images/m-diario-bg.svg)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '50%',
+    backgroundPosition: 'right',
+    backgroundPositionY: 'bottom'
+  }">
+    <h2>Menú Diario</h2>
+
     <div class="menu">
         <div class="plato" *ngIf="primero">
             <div class="icono">
-                <p>0</p>
+                <img src="../../../assets/images/icon-m-diario-1.svg" alt="SchoolMenu-logo" />
             </div>
             <div class="texto">
                 <h4>Primer plato</h4>
@@ -13,18 +18,18 @@
             </div>
             <div class="info">
                 <select>
-                    <option selected>Ingredientes</option>
+                    <option selected>Ingredientes:</option>
                     <option disabled *ngFor="let ingrediente of primero.ingredientes">{{ingrediente.nombre}}</option>
                 </select>
                 <select>
-                    <option selected>Alérgenos</option>
+                    <option selected>Alérgenos:</option>
                     <option disabled *ngFor="let alergeno of primero.alergenos">{{alergeno.nombre}}</option>
                 </select>
             </div>
         </div>
         <div class="plato" *ngIf="segundo">
             <div class="icono">
-                <p>0</p>
+                <img src="../../../assets/images/icon-m-diario-2.svg" alt="SchoolMenu-logo" />
             </div>
             <div class="texto">
                 <h4>Segundo plato</h4>
@@ -43,7 +48,7 @@
         </div>
         <div class="plato" *ngIf="postre">
             <div class="icono">
-                <p>0</p>
+                <img src="../../../assets/images/icon-m-diario-3.svg" alt="SchoolMenu-logo" />
             </div>
             <div class="texto">
                 <h4>Postre</h4>
@@ -60,15 +65,15 @@
                 </select>
             </div>
         </div>
-        <button class="botonVolver" (click)="clickVolver()">Volver</button>
+        <button class="botonVolver" (click)="clickVolver()"><i class="bi bi-arrow-left"></i>Volver</button>
     </div>
     <div class="comentarios">
         <form [formGroup]="comentario" (ngSubmit)="onSubmit()">
             <h4>Si tienes algo importante que consultarnos deja tu comentario aquí:</h4>
-            <textarea cols="30" rows="10" formControlName="mensaje" minlength="25"></textarea>
+            <textarea formControlName="mensaje" minlength="15" maxlength="255" class="textarea"></textarea>
             <input type="submit" value="Enviar" [disabled]="!comentario.valid" [ngClass]="{
                 'disabled': !comentario.valid 
-            }">
+            }" class="botonEnviar">
         </form>
     </div>
 </div>

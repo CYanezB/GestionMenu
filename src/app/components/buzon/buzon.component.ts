@@ -36,6 +36,8 @@ export class BuzonComponent implements OnInit {
   async getAllComentarios() {
     try {
       this.comentarios = await this.buzonService.getAllComentarios()
+      console.log(this.comentarios);
+
 
     } catch (error) {
       console.log(error);
@@ -56,11 +58,10 @@ export class BuzonComponent implements OnInit {
 
   }
 
-  async deleteComentario($event: any) {
-    let response = await this.buzonService.deleteComentario($event.target.value);
+  async deleteComentario(id: number) {
+    let response = await this.buzonService.deleteComentario(id)
+    console.log(response);
     this.getAllComentarios()
-
-    console.log($event.target.value);
 
   }
 }

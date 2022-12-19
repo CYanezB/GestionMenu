@@ -3,18 +3,19 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
 
-body {
-    display: flex;
-    flex-wrap: wrap;
-    font-family: Poppins;
-    background-color: var(--background);
-}
 
 .contenedor {
     display: flex;
     text-align: center;
     margin: 1em;
     width: 28em;
+    font-family: Poppins;
+    height: calc(100vh - 8em);
+}
+
+.contene2 {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 form {
@@ -24,6 +25,7 @@ form {
     font-family: Poppins;
     height: fit-content;
     text-align: left;
+    margin-top: 8em;
 }
 
 form select {
@@ -145,16 +147,16 @@ input.ng-invalid.ng-touched {
     display: flex;
     flex-wrap: wrap;
     margin-top: 15em;
+    justify-content: center;
 }
 
 .platos h2 {
     position: absolute;
-    margin-top: -2em;
     text-align: center;
     font-family: 'Poppins';
     color: var(--green-medium);
     font-size: 4em;
-    margin-left: 6em;
+    margin-top: -2em;
 }
 
 
@@ -168,8 +170,14 @@ input.ng-invalid.ng-touched {
     width: auto;
 }
 
+.contenedorPlatos {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+}
+
 .conplato {
-    height: 27%;
+    height: 100%;
     overflow: auto;
 }
 

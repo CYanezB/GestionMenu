@@ -1,4 +1,5 @@
 <div class="contenedor">
+    <h2>Buzón de comentarios</h2>
     <table class="tablamensajes">
         <thead>
             <tr>
@@ -8,9 +9,9 @@
                         <input type="text" (input)="filtrarPorNombre()" id="search-text" formControlName="inputNombre" placeholder="Introduce un nombre para filtrar">
                     </form>
                 </th>
-                <th colspan=" 2" class="filtros">
+                <th colspan="4" class="filtros">
                     <select (change)="filtrarPorMenu($event)">
-                        <option hidden>Filtar por menu</option>
+                        <option hidden>Filtrar por menú</option>
                         <option [value]="menu.id" *ngFor="let menu of allMenus">{{menu.primer_plato}} - {{menu.segundo_plato}} - {{menu.nombre_postre}}</option>
                     </select>
                 </th>
@@ -18,7 +19,7 @@
         </thead>
         <tbody>
             <th>Nombre</th>
-            <th>Menu</th>
+            <th>Menú</th>
             <th>Mensaje</th>
             <th>Fecha</th>
             <tr class="mensaje" *ngFor="let comentario of comentarios">
@@ -26,10 +27,7 @@
                 <td class="celda">{{comentario.menu_id}}</td>
                 <td class="celda">{{comentario.mensaje}}</td>
                 <td class="celda">{{comentario.fecha | date: 'dd-MM-YYYY'}}</td>
-
-                <td class="celda">
-                </td>
-                <td><button (click)="deleteComentario($event)" [value]="comentario.id">Eliminar comentario</button></td>
+                <td class="celda2"><button (click)="deleteComentario(comentario.id)"><i class="fas fa-trash-alt"></i></button></td>
             </tr>
         </tbody>
     </table>

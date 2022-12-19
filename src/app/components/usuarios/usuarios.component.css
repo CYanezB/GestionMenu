@@ -96,4 +96,9 @@ button {
 
 .celda2 button {
     margin-left: 12em;
+    transition: 0.5s;
+}
+
+.celda2 button:hover {
+    color: tomato;
 }

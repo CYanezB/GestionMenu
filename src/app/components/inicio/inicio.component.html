@@ -1,32 +1,67 @@
-<div class="contenedor">
-    <h3 class="tituloPagina">MENU SEMANAL</h3>
+<div class="contenedor" [ngStyle]="{
+    backgroundImage: 'url(/assets/images/m-semanal-bg.svg)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '50%',
+    backgroundPosition: 'right',
+    backgroundPositionY: 'bottom'
+  }">
+    <h2>Menú Semanal</h2>
     <form>
         <div class="selectCurso">
-            <select (change)="cicloSeleccionado($event)">
+            <select class="select" (change)="cicloSeleccionado($event)">
                 <option value="1">Infantil (3-5)</option>
                 <option value="2">Primer ciclo (6-8)</option>
                 <option value="3">Segundo ciclo (9-12)</option>
             </select>
         </div>
         <div class="inputSemana">
-            <input type="week" (change)="semanaSeleccionada($event)">
+            <input type="week" (change)="semanaSeleccionada($event)" class="select">
         </div>
     </form>
 
     <div class="platosSemana">
         <div class="menuDiario" *ngFor="let menu of menuSemanal; let indice = index">
 
-            <div *ngIf="menu !== null" [routerLink]="['/home/dia', menu.menu_id]">
-                <p>0</p>
+            <div *ngIf="menu !== null" [routerLink]="['/home/dia', menu.menu_id]" class="assigned">
+                <div class="logo-svg" *ngIf="dias[indice] === 'Lunes'">
+                    <img src="../../../assets/images/icon-burger.svg" alt="SchoolMenu-logo" />
+                </div>
+                <div class="logo-svg" *ngIf="dias[indice] === 'Martes'">
+                    <img src="../../../assets/images/icon-soup.svg" alt="SchoolMenu-logo" />
+                </div>
+                <div class="logo-svg" *ngIf="dias[indice] === 'Miércoles'">
+                    <img src="../../../assets/images/icon-chicken.svg" alt="SchoolMenu-logo" />
+                </div>
+                <div class="logo-svg" *ngIf="dias[indice] === 'Jueves'">
+                    <img src="../../../assets/images/icon-watermelon.svg" alt="SchoolMenu-logo" />
+                </div>
+                <div class="logo-svg" *ngIf="dias[indice] === 'Viernes'">
+                    <img src="../../../assets/images/icon-pez.svg" alt="SchoolMenu-logo" />
+                </div>
                 <h5>{{dias[indice]}}</h5>
                 <p>{{menu.fecha | date: 'dd-MM-YYYY'}}</p>
-                <p>{{menu.nombre_primero}}</p>
-                <p>{{menu.nombre_segundo}}</p>
-                <p>{{menu.nombre_postre}}</p>
+                <p>{{menu.nombre_primero.toUpperCase()}}</p>
+                <p>{{menu.nombre_segundo.toUpperCase()}}</p>
+                <p>{{menu.nombre_postre.toUpperCase()}}</p>
             </div>
             <div class="notAssigned" *ngIf="menu === null">
+                <div class="logo-svg" *ngIf="dias[indice] === 'Lunes'">
+                    <img src="../../../assets/images/icon-burger.svg" />
+                </div>
+                <div class="logo-svg" *ngIf="dias[indice] === 'Martes'">
+                    <img src="../../../assets/images/icon-soup.svg" />
+                </div>
+                <div class="logo-svg" *ngIf="dias[indice] === 'Miércoles'">
+                    <img src="../../../assets/images/icon-chicken.svg" />
+                </div>
+                <div class="logo-svg" *ngIf="dias[indice] === 'Jueves'">
+                    <img src="../../../assets/images/icon-watermelon.svg" />
+                </div>
+                <div class="logo-svg" *ngIf="dias[indice] === 'Viernes'">
+                    <img src="../../../assets/images/icon-pez.svg" />
+                </div>
                 <h5>{{dias[indice]}}</h5>
-                <h5>Aún no se ha asignado un menú este día al ciclo seleccionado</h5>
+                <p>Aún no se ha asignado un menú este día al ciclo seleccionado</p>
             </div>
         </div>
     </div>

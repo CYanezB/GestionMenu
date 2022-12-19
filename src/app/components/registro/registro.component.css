@@ -1,14 +1,17 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
-body {
-  font-family: Montserrat;
+.formulario {
+  height: 50vh;
+  width: 50vh;
 }
+
 h2 {
   font-family: Montserrat;
   color: var(--green-medium);
   font-size: 50px;
   font-weight: 600;
 }
+
 h3 {
   font-size: 1.3em;
   color: var(--green-medium);
@@ -23,6 +26,7 @@ h3 {
 .contenedor {
   margin-top: 60px;
   margin-left: 160px;
+  height: calc(100vh - 8em);
 }
 
 .formularioRegistro {
@@ -45,7 +49,6 @@ h3 {
   border: var(--green-medium) 1.5px solid;
   padding: 0.4em;
   color: var(--green-dark);
-  font-size: 0.8em;
 }
 
 .inputsFormulario i {

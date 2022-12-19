@@ -23,6 +23,7 @@
     "@fullcalendar/interaction": "^4.4.2",
     "@fullcalendar/timegrid": "^4.4.2",
     "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.2",
     "dayjs": "^1.11.7",
     "jwt-decode": "^3.1.2",
     "primeng": "^14.2.2",

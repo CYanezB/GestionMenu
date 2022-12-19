@@ -1,19 +1,47 @@
 header {
     display: flex;
     justify-content: space-around;
-    background-color: black;
     height: 3em;
     padding-top: 0.7em;
+    margin-top: 1em;
 }
 
 header nav ul {
     display: flex;
     list-style: none;
-    color: white;
+    color: var(--green-medium);
+    font-weight: bold;
     gap: 6em;
 }
 
+header nav ul li {
+    cursor: pointer;
+    height: 3em;
+    padding: 0.7em;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+header nav ul li:hover {
+    background-color: var(--green-light);
+}
+
+
 .activo {
-    background-color: white;
-    color: black;
+    border-bottom: 4px solid var(--green-medium);
+    margin-bottom: 1em;
+}
+
+.logOut {
+    border: 2px solid tomato;
+    color: tomato;
+    background-color: var(--background);
+    padding: 0.5em;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.logOut:hover {
+    background-color: tomato;
+    color: var(--background);
 }

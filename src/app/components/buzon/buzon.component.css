@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+table,
+td {
+    background-color: var(--background);
+}
+
+thead,
+tfoot {
+    background-color: var(--green-light);
+    color: var(--green-dark);
+
+}
+
+tbody th {
+    text-align: center;
+    padding: 1em;
+    color: var(--green-medium);
+}
+
+.tablamensajes {
+    margin: 2em auto;
+    width: 90%;
+    box-shadow: 0px 4px 20px rgba(45, 133, 111, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.celda {
+    padding: 0.5em;
+    color: var(--green-medium);
+    border: 1px solid var(--green-medium);
+    width: 24em;
+}
+
+.filtros {
+    padding: 0.6em;
+    text-align: center;
+}
+
+#search-text {
+    background-color: var(--background);
+    border-radius: 20px;
+    color: var(--green-medium);
+    font-family: Manrope;
+    padding: .4em;
+    border: none;
+    width: 250px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Poppins';
+    color: var(--green-medium);
+    font-size: 4em;
+    margin-top: 1em;
+}
+
+.filtros select {
+    background-color: var(--background);
+    border-radius: 20px;
+    color: var(--green-dark);
+    font-family: Manrope;
+    margin-left: 3em;
+    padding: .5em;
+    font-weight: 700;
+    width: 12em;
+    border: none;
+    text-align: center;
+}
+
+button {
+    border: none;
+    padding: 0.5em;
+    text-align: center;
+    background-color: var(--background);
+    color: var(--green-medium);
+}
+
+.celda select {
+    background-color: var(--background);
+    border-radius: 20px;
+    color: var(--green-dark);
+    font-family: Manrope;
+    font-weight: 700;
+    width: 20em;
+    padding: .4em;
+    border: 2px solid var(--green-medium);
+}
+
+.celda1 {
+    padding: 0.5em;
+    color: var(--green-medium);
+    border-top: 1px solid var(--green-medium);
+    border-bottom: 1px solid var(--green-medium);
+}
+
+.celda2 {
+    padding: 0.5em;
+    color: var(--green-medium);
+    border-top: 1px solid var(--green-medium);
+    border-bottom: 1px solid var(--green-medium);
+}
+
+.celda2 button {
+    transition: 0.5s;
+}
+
+.celda button i {
+    margin-right: 1em;
+}
+
+.celda2 button:hover {
+    color: tomato;
+}

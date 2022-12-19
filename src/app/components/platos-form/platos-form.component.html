@@ -1,4 +1,4 @@
-<body>
+<div class="contene2 col-12">
     <div class="contenedor col-4">
         <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
             <div class="form-group">
@@ -43,10 +43,15 @@
             </div>
         </form>
     </div>
-    <div class="imagen col-8" [ngStyle]="{backgroundImage:'url(/assets/images/verduras1.svg)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain' }">
+    <div [ngStyle]="{
+      backgroundImage: 'url(/assets/images/verduras1.svg)',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '100%',
+      backgroundPositionY: 'bottom'
+    }">
         <div class="platos col-12">
             <h2>Crea Un Plato</h2>
-            <div>
+            <div class="contenedorPlatos">
                 <h3>PRIMEROS</h3>
                 <div class="conplato col-12">
                     <div class="plato" *ngFor="let p of plato" [ngClass]="{'hidden' : p.categoria !== 'primero'}">
@@ -58,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="contenedorPlatos">
                 <h3>SEGUNDOS</h3>
                 <div class="conplato col-12">
                     <div class="plato" *ngFor="let p of plato" [ngClass]="{'hidden' : p.categoria !== 'segundo'}">
@@ -70,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="contenedorPlatos">
                 <h3>POSTRES</h3>
                 <div class="conplato col-12">
                     <div class="plato" *ngFor="let p of plato" [ngClass]="{'hidden' : p.categoria !== 'postre'}">
@@ -84,4 +89,4 @@
             </div>
         </div>
     </div>
-</body>
+</div>
