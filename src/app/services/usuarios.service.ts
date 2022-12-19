@@ -47,5 +47,10 @@ export class UsuariosService {
     )
   }
 
+  getUserById(usuario_id: number) {
+    return firstValueFrom(
+      this.HttpClient.get<any>(`${this.baseUrl}/usuarios/${usuario_id}`)
+    )
+  }
 
 }

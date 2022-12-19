@@ -14,8 +14,9 @@
     </form>
 
     <div class="platosSemana">
-        <div class="menuDiario" *ngFor="let menu of menuSemanal; let indice = index" [routerLink]="['/dia', menu.menu_id]">
-            <div *ngIf="menu !== null">
+        <div class="menuDiario" *ngFor="let menu of menuSemanal; let indice = index">
+
+            <div *ngIf="menu !== null" [routerLink]="['/home/dia', menu.menu_id]">
                 <p>0</p>
                 <h5>{{dias[indice]}}</h5>
                 <p>{{menu.fecha | date: 'dd-MM-YYYY'}}</p>

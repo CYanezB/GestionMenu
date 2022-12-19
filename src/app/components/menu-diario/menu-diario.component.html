@@ -14,9 +14,11 @@
             <div class="info">
                 <select>
                     <option selected>Ingredientes</option>
+                    <option disabled *ngFor="let ingrediente of primero.ingredientes">{{ingrediente.nombre}}</option>
                 </select>
                 <select>
                     <option selected>Alérgenos</option>
+                    <option disabled *ngFor="let alergeno of primero.alergenos">{{alergeno.nombre}}</option>
                 </select>
             </div>
         </div>
@@ -28,6 +30,16 @@
                 <h4>Segundo plato</h4>
                 <p>{{menu.segundo_plato.toUpperCase()}}</p>
             </div>
+            <div class="info">
+                <select>
+                    <option selected>Ingredientes:</option>
+                    <option disabled *ngFor="let ingrediente of segundo.ingredientes">{{ingrediente.nombre}}</option>
+                </select>
+                <select>
+                    <option selected>Alérgenos:</option>
+                    <option disabled *ngFor="let alergeno of segundo.alergenos">{{alergeno.nombre}}</option>
+                </select>
+            </div>
         </div>
         <div class="plato" *ngIf="postre">
             <div class="icono">
@@ -37,11 +49,26 @@
                 <h4>Postre</h4>
                 <p>{{menu.nombre_postre.toUpperCase()}}</p>
             </div>
+            <div class="info">
+                <select>
+                    <option selected>Ingredientes:</option>
+                    <option disabled *ngFor="let ingrediente of postre.ingredientes">{{ingrediente.nombre}}</option>
+                </select>
+                <select>
+                    <option selected>Alérgenos:</option>
+                    <option disabled *ngFor="let alergeno of postre.alergenos">{{alergeno.nombre}}</option>
+                </select>
+            </div>
         </div>
+        <button class="botonVolver" (click)="clickVolver()">Volver</button>
     </div>
     <div class="comentarios">
-        <h4>Si tienes algo importante que consultarnos deja tu comentario aquí:</h4>
-        <textarea cols="30" rows="10"></textarea>
-        <input type="submit" value="Enviar">
+        <form [formGroup]="comentario" (ngSubmit)="onSubmit()">
+            <h4>Si tienes algo importante que consultarnos deja tu comentario aquí:</h4>
+            <textarea cols="30" rows="10" formControlName="mensaje" minlength="25"></textarea>
+            <input type="submit" value="Enviar" [disabled]="!comentario.valid" [ngClass]="{
+                'disabled': !comentario.valid 
+            }">
+        </form>
     </div>
 </div>

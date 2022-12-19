@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { Plato } from '../interfaces/plato.interface';
@@ -73,6 +73,20 @@ export class MenuService {
   getMenuById(menu_id: number) {
     return firstValueFrom(
       this.HttpClient.get<any>(`${this.baseUrl}/menus/${menu_id}`)
+    )
+  }
+
+  nuevoComentario(pValues: any) {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!,
+        'Content-Type': 'application/json'
+      })
+    }
+
+    return firstValueFrom(
+      this.HttpClient.post<any>(`${this.baseUrl}/comentarios/nuevo`, pValues, httpOptions)
     )
   }
 

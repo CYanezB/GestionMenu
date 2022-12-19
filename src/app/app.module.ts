@@ -7,12 +7,12 @@ import { MenuFormComponent } from './components/menu-form/menu-form.component';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CalendarioComponent } from './components/calendario/calendario.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { RegistroComponent } from './components/registro/registro.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { MenuDiarioComponent } from './components/menu-diario/menu-diario.component';
+import { BuzonComponent } from './components/buzon/buzon.component';
 
 
 @NgModule({
@@ -21,11 +21,11 @@ import { MenuDiarioComponent } from './components/menu-diario/menu-diario.compon
     PlatosFormComponent,
     MenuFormComponent,
     LoginComponent,
-    CalendarioComponent,
     RegistroComponent,
     InicioComponent,
     UsuariosComponent,
-    MenuDiarioComponent
+    MenuDiarioComponent,
+    BuzonComponent
   ],
   imports: [
     BrowserModule,
