@@ -62,7 +62,7 @@ export class BuzonComponent implements OnInit {
   async deleteComentario(id: number) {
     Swal.fire({
       title: '¿Seguro?',
-      text: "Esto no puede revertirse",
+      text: "Esta acción no puede revertirse",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#2d856f',

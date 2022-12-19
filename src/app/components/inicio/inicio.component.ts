@@ -48,8 +48,17 @@ export class InicioComponent implements OnInit {
 
   }
 
-  cicloSeleccionado($event: any) {
+  async cicloSeleccionado($event: any) {
+    let semanaActual = parseInt(dayjs().format('w'))
+    let anoActual = parseInt(dayjs().format('YYYY'))
     this.ciclo = $event.target.value
+    let pValues = {
+      ano: anoActual,
+      semana: semanaActual - 1,
+      ciclo_id: this.ciclo
+    }
+
+    this.menuSemanal = await this.menuService.getMenuSemanalBySemanaAndCicloId(pValues)
   }
 
   async semanaSeleccionada($event: any) {
