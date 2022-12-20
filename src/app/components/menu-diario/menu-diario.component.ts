@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -24,7 +25,8 @@ export class MenuDiarioComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private menuService: MenuService,
     private platoService: PlatosService,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {
     this.menuSeleccionado = 1
     this.comentario = new FormGroup({
@@ -73,7 +75,7 @@ export class MenuDiarioComponent implements OnInit {
   }
 
   clickVolver() {
-    this.router.navigate(['/home'])
+    this.location.back()
   }
 
 }
