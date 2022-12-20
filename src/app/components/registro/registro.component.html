@@ -20,12 +20,9 @@
       </div>
 
       <div class="inputsFormulario">
-        <select formControlName="curso">
-          <option value="" disabled>Selecciona curso</option>
-          <option value="1">Infantil (3-5)</option>
-          <option value="2">Primer Ciclo (6-8)</option>
-          <option value="3">Segundo Ciclo (9-12)</option>
-        </select>
+        <input type="checkbox" (change)="cicloSeleccionado(1)">
+        <input type="checkbox" (change)="cicloSeleccionado(2)">
+        <input type="checkbox" (change)="cicloSeleccionado(3)">
       </div>
 
       <div class="inputsFormulario left-icon">
@@ -39,9 +36,10 @@
         <input type="password" formControlName="repitePassword" placeholder="Repite Password" />
       </div>
 
-      <input class="botonEnviar" type="submit" value="Crear Cuenta" [disabled]="!formulario.valid" [ngClass]="{
-            'undisabled': formulario.valid
+      <input class="botonEnviar" type="submit" value="Crear Cuenta" [disabled]="!formulario.valid && ciclosSeleccionados.length === 0" [ngClass]="{
+            'undisabled': formulario.valid && ciclosSeleccionados.length !== 0
           }" />
     </form>
+    {{formulario.valid && ciclosSeleccionados.length !== 0}}
   </div>
 </div>

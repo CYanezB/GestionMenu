@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class RegistroComponent implements OnInit {
 
   formulario: FormGroup;
+  ciclosSeleccionados: number[]
 
   constructor(
     private registroService: RegistroService,
@@ -29,11 +30,10 @@ export class RegistroComponent implements OnInit {
       ]),
       repitePassword: new FormControl('', [
         Validators.required
-      ]),
-      curso: new FormControl('', [
-        Validators.required
       ])
     })
+
+    this.ciclosSeleccionados = []
   }
 
   ngOnInit(): void {
@@ -52,7 +52,7 @@ export class RegistroComponent implements OnInit {
         let pValues = {
           nombre: this.formulario.value.nombre,
           email: this.formulario.value.email,
-          curso_id: Number(this.formulario.value.curso),
+          ciclos_id: this.ciclosSeleccionados,
           password: this.formulario.value.password
         }
         const response = await this.registroService.registrarUsuario(pValues)
@@ -69,10 +69,14 @@ export class RegistroComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-
-
-
-
-
   }
+
+  cicloSeleccionado(ciclo_id: number) {
+    if (this.ciclosSeleccionados.includes(ciclo_id)) {
+      this.ciclosSeleccionados = this.ciclosSeleccionados.filter((item) => item != ciclo_id)
+    } else {
+      this.ciclosSeleccionados.push(ciclo_id)
+    }
+
+  };
 }
