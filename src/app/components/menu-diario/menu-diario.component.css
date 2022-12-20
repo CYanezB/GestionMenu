@@ -132,3 +132,34 @@ h2 {
     margin-right: 0.5em;
     font-size: 2em;
 }
+
+@media (max-width: 768px) {
+
+    .plato {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 3em;
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+
+    .menu {
+        height: 100vh;
+    }
+
+    .comentarios {
+        margin-left: 2em;
+        width: 45%;
+    }
+
+    .contenedor {
+        height: calc(110vh - 3em);
+    }
+
+    .botonVolver {
+        width: 50%;
+    }
+
+}

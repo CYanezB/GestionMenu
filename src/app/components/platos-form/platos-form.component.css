@@ -264,3 +264,48 @@ p.alergenos {
 #nombreplato {
     margin-right: 2.4em;
 }
+
+@media (max-width: 768px) {
+    .platos h2 {
+        font-size: 3em;
+        margin-bottom: 1em;
+    }
+
+    .contene2 {
+        display: grid;
+        justify-items: center;
+    }
+
+    .contenedor {
+        height: calc(70vh - 8em);
+    }
+
+    .platos {
+        margin-top: 21em;
+        height: 40vh;
+    }
+
+    .contenedorPlatos {
+        width: 33%;
+    }
+
+
+    .nombre {
+        width: 100%;
+    }
+
+    .plato select {
+        height: 100%;
+        margin-left: 0;
+    }
+
+    .plato {
+        display: grid;
+    }
+
+    .conplato {
+        height: 78%;
+    }
+
+
+}
