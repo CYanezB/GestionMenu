@@ -170,3 +170,30 @@ input.disabled {
     --yellow-dark: #ffb93e;
     --white: #f1f1f1;
     --background: #f1eadf; */
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .body {
+    display: revert-layer;
+  }
+
+  h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+
+  .tarjetero-contenedor {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  .menu-contenedor {
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 3em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+}

@@ -52,3 +52,21 @@ header nav ul li.componente:hover {
     background-color: tomato;
     color: var(--background);
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (max-width: 768px) {
+
+    header nav {
+        width: 100%;
+    }
+
+    header nav ul {
+        gap: 0em;
+    }
+
+    img {
+        width: 100px;
+        margin-left: 1em;
+    }
+
+}

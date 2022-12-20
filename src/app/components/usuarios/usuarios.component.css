@@ -107,3 +107,33 @@ button {
 .celda2 button:hover {
     color: tomato;
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (max-width: 768px) {
+
+    .tablaUsuarios {
+
+        width: 50px;
+
+    }
+
+    .celda1 {
+        width: 0;
+    }
+
+    .celda select {
+        width: 9em;
+
+    }
+
+    button {
+        margin-left: .3em;
+    }
+
+    h2 {
+        font-size: 3em;
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+
+}

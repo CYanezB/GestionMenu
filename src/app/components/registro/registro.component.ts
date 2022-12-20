@@ -29,6 +29,9 @@ export class RegistroComponent implements OnInit {
       ]),
       repitePassword: new FormControl('', [
         Validators.required
+      ]),
+      curso: new FormControl('', [
+        Validators.required
       ])
     })
   }
@@ -46,8 +49,13 @@ export class RegistroComponent implements OnInit {
           'error'
         )
       } else {
-
-        const response = await this.registroService.registrarUsuario(this.formulario.value)
+        let pValues = {
+          nombre: this.formulario.value.nombre,
+          email: this.formulario.value.email,
+          curso_id: Number(this.formulario.value.curso),
+          password: this.formulario.value.password
+        }
+        const response = await this.registroService.registrarUsuario(pValues)
         console.log(response);
         Swal.fire(
           'Hecho',
